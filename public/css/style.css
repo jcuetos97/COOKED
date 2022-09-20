@@ -1,0 +1,24 @@
+* {
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    line-height: 1.5;
+    font-size: 16px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    font-family: system-ui, sans-serif; }
+
+a {
+    text-decoration: none;
+    color: inherit; }
+
+li {
+    list-style: none; }
+
+button {
+    border: none;
+    cursor: pointer; }
+
