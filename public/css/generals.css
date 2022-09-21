@@ -3,8 +3,8 @@
   --dark-blue: #086788; 
   --yellow: #F0C808;
   --papaya: #FFF1D0;
+  --dark: #333;
 }
-
 
 * {
     box-sizing:border-box;
@@ -13,10 +13,8 @@
 
 body {
     line-height: 1.5;
-    font-size: 16px;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    font-family: system-ui, sans-serif; }
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;}
 
 a {
     text-decoration: none;
@@ -32,3 +30,26 @@ button {
 textarea {
     resize: none;
     font-family: inherit; } 
+
+/* Footer */
+.footer {
+    position: fixed;
+    bottom:0vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.btn-new-post {
+    font-size: inherit;
+    font-family: inherit;
+    background-color: var(--dark);
+    color:var(--white);
+    padding: 25px;
+    border-radius: 25px;
+}
+.btn-new-post:hover {
+    transform: scale(1.1);
+}

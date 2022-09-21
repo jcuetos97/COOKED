@@ -1,41 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+
 :root {
     --light-blue: #05A3C7; 
     --dark-blue: #086788; 
     --yellow: #F0C808;
     --papaya: #FFF1D0;
+    --white: #fff;
   }
-
 
 .header {
     top: 0;
-    height: 75px;
+    height: 115px;
     width: 100%;
     z-index: 1000;
     background: #333;
-    background: #fff;
+    background: var(--yellow);
     box-shadow: 0 10px 100px rgba(0, 0, 0, 0.1); 
     display: flex; }
 
-.header-main {
-    width: 100% ;
-}
 .header-content {
     width: 100% ;
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    padding: 1rem 5rem; }
+    justify-content: center; }
 
-.header-links {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center; }
-    @media only screen and (max-width: 37.5em) {
-    .header__links { display: none; } }
+.header-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 4rem;
+    color: var(--white);
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+@media only screen and (max-width: 67rem) {
+    .header-title {
+         font-size: 2.5rem; } }
+         .header-title:hover {
+            color: #1e1e1e;
+        }
+
+.header-register {
+    display: inline-flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    right: 0;
+    top: 1rem;
+}
+
+.header-list-item {
+    text-align: center;
+}
+
+@media only screen and (max-width: 67rem) {
+   .header-register {
+        position: relative ; } }
+
 .header-link {
     text-transform: uppercase;
     letter-spacing: 1px;
-    transition: color .3s; }
+    transition: color .3s; 
+    padding: 2rem; 
+}
 .header-link:hover {
-color: #0062b9; }
+    color: #0062b9; 
+}
+
+
+.sub-header {
+    height: 45px;
+    width: 100%;
+    z-index: 1000;
+    background: var(--dark);
+    color: var(--white) ;
+    display: flex; }
+
+.sub-header-content {
+    width: 100% ;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center; }

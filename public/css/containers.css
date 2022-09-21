@@ -1,0 +1,32 @@
+:root {
+    --light-blue: #05A3C7; 
+    --dark-blue: #086788; 
+    --yellow: #F0C808;
+    --papaya: #FFF1D0;
+  }
+
+.main-container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    top: 115px;
+    bottom: 0;
+    padding: 25px;
+    background-color: var(--yellow);   
+}
+
+.dashboard-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  top: 155px;
+  bottom: 0;
+  padding: 25px;
+  background-color: var(--yellow);   
+}
+
+
