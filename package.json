@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jcuetos97/Project-2.git"
+    "url": "git+https://github.com/jcuetos97/COOKED.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jcuetos97/Project-2/issues"
+    "url": "https://github.com/jcuetos97/COOKED/issues"
   },
-  "homepage": "https://github.com/jcuetos97/Project-2#readme",
+  "homepage": "https://github.com/jcuetos97/COOKED#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.5",
