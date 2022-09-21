@@ -1,8 +1,15 @@
+:root {
+  --light-blue: #05A3C7; 
+  --dark-blue: #086788; 
+  --yellow: #F0C808;
+  --papaya: #FFF1D0;
+}
+
+
 * {
     box-sizing:border-box;
     margin: 0;
-    padding: 0;
-}
+    padding: 0; }
 
 body {
     line-height: 1.5;
@@ -22,3 +29,6 @@ button {
     border: none;
     cursor: pointer; }
 
+textarea {
+    resize: none;
+    font-family: inherit; } 
