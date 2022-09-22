@@ -1,5 +1,5 @@
 <div class="posts-container">
-  {{#each allPosts}}
+  {{#each allPosts as |post|}}
   <div class="post-card">
     <div>
       <div class="card-header">
@@ -12,12 +12,11 @@
       </div>
     
       <div class="card-body">
-        <img src="/images/userUploads/mexican-rice.jpg" alt="post-image" class="card-image"> 
+        <img src="/uploads/{{file_img}}" alt="post-image" class="card-image"> 
         <div class="card-text">
           {{body}}
         </div>
       </div>
-
       
     </div>
   </div>
