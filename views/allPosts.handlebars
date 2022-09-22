@@ -1,4 +1,24 @@
-<div>
-    <h1>POSTS HERE</h1>
+<div class="posts-container">
+  {{#each allPosts as |post|}}
+  <div class="post-card">
+    <div>
+      <div class="card-header">
+        <h2> 
+          <a href="/post/{{id}}">{{title}}</a> 
+        </h2>
+        <div class="card-data">
+          <p>Posted by {{user.username}} on {{postDate createdAt}}</p>
+        </div>
+      </div>
+    
+      <div class="card-body">
+        <img src="/uploads/{{file_img}}" alt="post-image" class="card-image"> 
+        <div class="card-text">
+          {{body}}
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  {{/each}}
 </div>
-
