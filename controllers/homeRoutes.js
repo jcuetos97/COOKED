@@ -8,9 +8,14 @@ router.get('/', withAuth, async (req,res) => {
         const posts = await Post.findAll({
            include: [User],
         });
+
+        console.log('Posts de la DB');
+        console.log(posts);
   
         const allPosts = posts.map((post) => post.get({ plain: true }));
    
+        console.log(allPosts);
+
         res.render('allPosts', {
         layout: 'dashboard',
         allPosts,
