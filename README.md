@@ -33,3 +33,4 @@ This application was built with:
 * MySQL2
 * Dotenv
 * Model-View-Controller
+* Multer
