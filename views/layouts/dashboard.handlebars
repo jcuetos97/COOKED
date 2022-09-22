@@ -16,54 +16,78 @@
 <body>
     <div class="header">
         <div class="header-content">
-                
-                  <ul>
-                    <li class="header-list-item">
-                        <a href="/" class="header-title"> COOKED <i class="fa-solid fa-kitchen-set"></i> </a>  
-                    </li>
-                    <div class="header-register">
-                      <li>
-                          <a href="/signup" class="header-link"> Account </a>
-                      </li>
-                      <li>
-                          <a href="/login" id="logout" class="header-link"> Logout </a>
-                      </li>     
-                    </div>  
-                  </ul>
-                        {{!-- <div class="header__main-ham-menu-cont">
-                          <img src="/css/images/ham-menu.svg" alt="hamburger menu" class="header__main-ham-menu" />   
-                        </div> --}}
+            <ul>
+            <li class="header-list-item">
+                <a href="/" class="header-title"> COOKED <i class="fa-solid fa-kitchen-set"></i> </a>  
+            </li>
+            <div class="header-register">
+                <li>
+                    <a href="/signup" class="header-link"> Account </a>
+                </li>
+                <li>
+                    <a href="/login" id="logout" class="header-link"> Logout </a>
+                </li>     
+            </div>  
+            </ul>
         </div>
       </div>
       <div class="sub-header">
         <ul class="sub-header-content">
             <li>
-                <a href="#" class="header-link"> Trending </a>
-            </li>
-            
-            <li>
-                <a href="#" class="header-link"> Pollo </a>
+                <a href="#" class="header-link"> Trending <i class="fa-solid fa-fire"></i></a>
             </li>
             <li>
-                <a href="#" class="header-link"> Vegetariano </a>
+                <a href="#" class="header-link"> Veggie <i class="fa-solid fa-seedling"></i></a>
             </li>
             <li>
-                <a href="#" class="header-link"> Carne </a>
-            </li>  
-            <li>
-                <a href="/dashboard/myposts" class="header-link"> Mis Posts </a>
+                <a href="#" class="header-link"> All-Meats <i class="fa-solid fa-fish"></i></a>
             </li>     
+            <li>     
+                <a href="#" class="header-link"> Desserts <i class="fa-solid fa-ice-cream"></i></a>
+            </li> 
+             <li>
+                <a href="/dashboard/myposts" class="header-link"> My posts </a>
+             </li>
+
         </ul>
+         <div class="header__main-ham-menu-cont">
+            <i class="fa-solid fa-bars header__main-ham-menu"></i>  
+         </div>  
+           <div class="header__sm-menu">
+            <div class="header__sm-menu-content">
+                <ul class="header__sm-menu-links">
+                    <li class="header__sm-menu-link">
+                        <a href="#"> Trending </a>
+                    </li>
+                    <li class="header__sm-menu-link">
+                        <a href="#"> All-Meats </a>
+                    </li>
+                    <li class="header__sm-menu-link">
+                        <a href="#"> Veggie </a>
+                    </li>
+                    <li class="header__sm-menu-link">
+                        <a href="#"> Desserts </a>
+                    </li>
+                     <li class="header__sm-menu-link">
+                        <a href="/dashboard/myposts"> My posts </a>
+                    </li>
+                    <li class="header__sm-menu-link">
+                        <i class="fa-solid fa-x header__main-ham-menu-close"></i>
+                    </li>
+                </ul>
+            </div>
+          </div>
       </div>
 
     <div class="dashboard-container">
         {{{ body }}}
-    </div>
-    
     <footer class="footer">
         <a href="/dashboard/new" class="btn-new-post">➕ New Post</a>
     </footer>
+    </div>
+    
+    
 </body>
 <script src="/js/logout.js"></script>
-<script src="/js/newPost.js"></script>
+<script src="/js/menu.js"></script>
 </html>

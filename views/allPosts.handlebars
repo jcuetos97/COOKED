@@ -1,15 +1,24 @@
-{{#each allPosts as |post|}}
-    <div class="post-card">
-        <div>
-            <p>{{title}}</p>
-            <label>By: {{user.username}}</label>
+<div class="posts-container">
+  {{#each allPosts as |post|}}
+  <div class="post-card">
+    <div>
+      <div class="card-header">
+        <h2> 
+          <a href="/post/{{id}}">{{title}}</a> 
+        </h2>
+        <div class="card-data">
+          <p>Posted by {{user.username}} on {{postDate createdAt}}</p>
         </div>
-        <div>
-            <img src="/uploads/{{file_img}}" width="200px" height="150px" />
+      </div>
+    
+      <div class="card-body">
+        <img src="/uploads/{{file_img}}" alt="post-image" class="card-image"> 
+        <div class="card-text">
+          {{body}}
         </div>
-        <div>
-            <textarea name="recipe" id="content-newPost">{{body}}</textarea>                                        
-        </div>        
+      </div>
+      
     </div>
-{{/each}}
-
+  </div>
+  {{/each}}
+</div>

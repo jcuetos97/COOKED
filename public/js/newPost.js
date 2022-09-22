@@ -1,5 +1,6 @@
-// const loginFormHandler = async (event) => {
-//     event.preventDefault();
+const publishFormHandler = async (event) => {
+    event.preventDefault();
+
   
 //     const title = document.querySelector('#title-newPost');
 //     const content = document.querySelector('#content-newPost');
@@ -21,7 +22,8 @@
 //     }
 //   };
   
-//   document
-//     .querySelector('.newPost-form')
-//     .addEventListener('submit', loginFormHandler);
+  document
+    .querySelector('.newPost-form')
+    .addEventListener('submit', publishFormHandler);
+
   
