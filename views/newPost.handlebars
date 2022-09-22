@@ -1,18 +1,37 @@
 <div class="post-card">
     <div class="card-header">
-        <p>New Post<i class="fa-solid fa-utensils"></i></p> 
+        <p>New Post</p> 
     </div>
     <form class="card-body newPost-form">   
         <label for="title-newPost">Title.</label>
         <input class="form-input" type="text" id="title-newPost"/>
 
         <label for="image-newPost">Image.</label>
-        <input class="form-input" type="image" id="title-newPost"/>
+        <input class="form-input" type="text" id="title-newPost"/>
      
 
         <label for="content-newPost">Content.</label>
-        <textarea name="content"  class="form-input" placeholder="Write post content here..." id="content-newPost" cols="0" rows="3"></textarea>
-    
+        <textarea name="content"  class="form-input" placeholder="Write post content here..." id="content-newPost" cols="0" rows="1"></textarea>
+        <label for="category-newPost">Choose a category:</label>
+            <div class="categories">
+                <ul class="categories-link">
+                    <li class="category-wrapper">
+                        <a href="#" class="category-link"> Trending </a>
+                    </li>
+                    <li class="category-wrapper">
+                        <a href="#" class="category-link"> Pollo </a>
+                    </li>
+                    <li class="category-wrapper">
+                        <a href="#" class="category-link"> Veggie </a>
+                    </li>
+                    <li class="category-wrapper">
+                        <a href="#" class="category-link"> Carne </a>
+                    </li>  
+                    <li class="category-wrapper">
+                        <a href="#" class="category-link"> Repostería </a>
+                    </li>     
+                </ul>
+            </div>
         <button class="btn sign-up-btn" id="publish" type="submit">Publish</button>
     </form>
  </div>
