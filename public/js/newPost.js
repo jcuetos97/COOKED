@@ -1,4 +1,4 @@
-const loginFormHandler = async (event) => {
+const publishFormHandler = async (event) => {
     event.preventDefault();
   
     const title = document.querySelector('#title-newPost');
@@ -23,5 +23,5 @@ const loginFormHandler = async (event) => {
   
   document
     .querySelector('.newPost-form')
-    .addEventListener('submit', loginFormHandler);
+    .addEventListener('submit', publishFormHandler);
   
