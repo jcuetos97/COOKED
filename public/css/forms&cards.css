@@ -20,10 +20,16 @@
     color: #1a1a1a;
     background-color: #fff;
     margin: 0.625rem 0;
-    font-size: 1.2rem;
+    font-size: 1rem;
     border: none;
     border-radius: 0.5rem;
 } 
+
+.form-input::placeholder {
+    font-size: 1rem;
+    font-family: inherit;
+}
+
 .sign-up {
     font-family: inherit;
     font-weight: inherit;
@@ -72,6 +78,11 @@
     color: var(--white);
     border-radius: 1.5rem;
     padding: 1.5rem;
+    
+}
+.card-header {
+    font-size: 1rem;
+    
 }
 .card-data {
     font-size: .95rem;
@@ -80,5 +91,5 @@
 }
 .card-body {
     padding: 1.5rem;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
