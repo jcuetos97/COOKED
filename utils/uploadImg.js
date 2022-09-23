@@ -4,24 +4,20 @@ const hbs = exphbs.create({});
 const path = require('path');
 const multer = require('multer');
 const { v4: uuidv4 } = require('uuid');
-
 const app = express();
-
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-
 const storagePref = multer.diskStorage({
-    destination: 'public/uploads',
+    destination: 'public/images/userUploads',
     filename: (req, file, cb) => {
         cb(null, uuidv4() + path.extname(file.originalname));
     }
 });
-
 //middleware
-const multerInfo = 
+const multerInfo =
 app.use(multer({
     storage: storagePref,
-    dest: 'public/uploads',
+    dest: 'public/images/userUploads',
     limits: {fileSize: 1000000},
     fileFilter: (req, file, cb) => {
         const fileTypes = /jpeg|jpg|png|gif/;
@@ -33,5 +29,4 @@ app.use(multer({
         cb('Error: tipo de archivo no valido');
     }
 }).single('fileImg'));
-
 module.exports = multerInfo;
