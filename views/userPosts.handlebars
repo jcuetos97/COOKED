@@ -1,8 +1,27 @@
-<div class="user-posts">
+<div class="posts-container">
   {{#each userPosts}}
-    <a class="list-item" href="/dashboard/edit/{{id}}">
-      <span>{{title}}</span>
-      <span>{{postDate createdAt}}</span>
-    </a>
+    <div class="post-card">
+    <div>
+      <div class="card-header">
+        <h2> 
+          <a href="/dashboard/edit/{{id}}">{{title}}</a> 
+        </h2>
+        <div class="card-data">
+          <p>Posted on {{postDate createdAt}}</p>
+        </div>
+      </div>
+    
+      <div class="card-body">
+        <img src="/images/userUploads/{{file_img}}" alt="post-image" class="card-image"> 
+        <div class="card-text">
+          {{body}}
+        </div>
+      </div>
+      
+    </div>
+  </div>
   {{/each}}
 </div>
+
+
+ 
