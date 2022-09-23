@@ -9,7 +9,8 @@ router.post('/new', withAuth, multerInfo, async (req, res) => {
         req.file == undefined ? img = 'NULL' : img = req.file.filename;
         const newRecipe = await Post.create({
             title: req.body.name, 
-            body: req.body.recipe, 
+            body: req.body.recipe,
+            category: req.body.category,
             file_img: img, 
             user_id: req.session.user_id
         });
@@ -24,7 +25,6 @@ router.post('/new', withAuth, multerInfo, async (req, res) => {
         });
 
         const allPosts = posts.map((recipe) => recipe.get({ plain:true }));
-        
         res.render('allPosts', {
             layout: 'dashboard',
             allPosts,
@@ -36,6 +36,37 @@ router.post('/new', withAuth, multerInfo, async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+ router.put("/:id", withAuth, async (req, res) => {
+    try {
+      Post.update(req.body,{
+        where: {
+          id: req.params.id
+        }
+      });
+  
+      res.status(200).end();
+       
+    } catch (err) {
+      res.status(400).json(err);
+    }
+  });
+  
+  router.delete("/:id", withAuth, async (req, res) => {
+    try {
+      Post.destroy({
+        where: {
+          id: req.params.id
+        }
+      });
+  
+      res.status(200).end();
+       
+    } catch (err) {
+      res.status(400).json(err);
+    }
+  });
+    
   
 router.put("/:id", withAuth, async (req, res) => {
   try {
