@@ -7,12 +7,13 @@ const multerInfo = require('../../utils/uploadImg');
 
 router.post('/new', withAuth, multerInfo, async (req, res) => {
     try {
-        let name;
-        req.file == undefined ? name = 'NULL' : name = req.file.filename;
+        let img;
+        req.file == undefined ? img = 'NULL' : img = req.file.filename;
         const newRecipe = await Post.create({
             title: req.body.name, 
-            body: req.body.recipe, 
-            file_img: name, 
+            body: req.body.recipe,
+            category: req.body.category,
+            file_img: img, 
             user_id: req.session.user_id
         });
         const recipeData = newRecipe.get({plain: true});
@@ -26,6 +27,7 @@ router.post('/new', withAuth, multerInfo, async (req, res) => {
         });
 
         const allPosts = posts.map((recipe) => recipe.get({ plain:true }));
+        console.log(allPosts);
         res.render('allPosts', {
             layout: 'dashboard',
             allPosts,
@@ -36,21 +38,21 @@ router.post('/new', withAuth, multerInfo, async (req, res) => {
         res.status(500).json(err);
     }
 });
-=======
-router.post('/new', withAuth, async (req, res) => {
-    try {
-      const newPost = await Post.create({
-        title: req.body.title,
-        body: req.body.body,
-        user_id: req.session.user_id
-        });
+
+// router.post('/new', withAuth, async (req, res) => {
+//     try {
+//       const newPost = await Post.create({
+//         title: req.body.title,
+//         body: req.body.body,
+//         user_id: req.session.user_id
+//         });
         
-        res.json({ message: 'Your post has been published successfully!' });
+//         res.json({ message: 'Your post has been published successfully!' });
       
-    } catch (err) {
-      res.status(400).json(err);
-    }
-  });
+//     } catch (err) {
+//       res.status(400).json(err);
+//     }
+//   });
   
   router.put("/:id", withAuth, async (req, res) => {
     try {

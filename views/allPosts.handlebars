@@ -7,14 +7,15 @@
           <a href="/post/{{id}}">{{title}}</a> 
         </h2>
         <div class="card-data">
-          <p>Posted by {{user.username}} on {{postDate createdAt}}</p>
+          {{!-- <p>Posted by {{user.username}} on {{postDate createdAt}}</p> QUE ES POSTDATE?--}}
+          <p>Posted by {{user.username}} on {{createdAt}}</p>
         </div>
       </div>
     
       <div class="card-body">
         <img src="/uploads/{{file_img}}" alt="post-image" class="card-image"> 
         <div class="card-text">
-          {{body}}
+          {{category}}
         </div>
       </div>
       
