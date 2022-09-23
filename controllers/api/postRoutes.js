@@ -15,8 +15,7 @@ router.post('/new', withAuth, multerInfo, async (req, res) => {
             user_id: req.session.user_id
         });
        
-        const recipeData = newRecipe.get({plain: true});
-        console.log(recipeData);
+        //const recipeData = newRecipe.get({plain: true});
         const posts = await Post.findAll({
             where: {
                 user_id: req.session.user_id
@@ -24,10 +23,10 @@ router.post('/new', withAuth, multerInfo, async (req, res) => {
             include: [User],
         });
 
-        const allPosts = posts.map((recipe) => recipe.get({ plain:true }));
-        res.render('allPosts', {
+        const userPosts = posts.map((post) => post.get({ plain:true }));
+        res.render('userPosts', {
             layout: 'dashboard',
-            allPosts,
+            userPosts,
             logged_in: req.session.logged_in,
         });
         
@@ -67,35 +66,35 @@ router.post('/new', withAuth, multerInfo, async (req, res) => {
     }
   });
     
-  
-router.put("/:id", withAuth, async (req, res) => {
-  try {
-    Post.update(req.body,{
-      where: {
-        id: req.params.id
-      }
-    });
+ //Codigo Repetido... 
+// router.put("/:id", withAuth, async (req, res) => {
+//   try {
+//     Post.update(req.body,{
+//       where: {
+//         id: req.params.id
+//       }
+//     });
 
-    res.status(200).end();
+//     res.status(200).end();
       
-  } catch (err) {
-    res.status(400).json(err);
-  }
-});
+//   } catch (err) {
+//     res.status(400).json(err);
+//   }
+// });
   
-router.delete("/:id", withAuth, async (req, res) => {
-  try {
-    Post.destroy({
-      where: {
-        id: req.params.id
-      }
-    });
+// router.delete("/:id", withAuth, async (req, res) => {
+//   try {
+//     Post.destroy({
+//       where: {
+//         id: req.params.id
+//       }
+//     });
 
-    res.status(200).end();
+//     res.status(200).end();
       
-  } catch (err) {
-    res.status(400).json(err);
-  }
-});
+//   } catch (err) {
+//     res.status(400).json(err);
+//   }
+// });
     
 module.exports = router; 
