@@ -48,14 +48,24 @@
     font-size: 1rem;
     border-radius: 0.3rem;
     outline: none;
-    background-color: var(--dark-blue);
-    color: var(--white);
+    background-color: var(--dark);
+    color: var(--papaya);
     transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 .btn:hover {
+    font-family: inherit;
+    font-weight: inherit;
     background-color: #cecece;
     color: #ffffff;
 }
+
+.btn-x {
+    font-size: inherit;
+    background-color: inherit;
+    color: var(--papaya);
+}
+
+
 
 @media only screen and (max-width: 67rem) {
     .form-sub {
@@ -95,7 +105,7 @@
     .card-body {
       padding: 0;
     }
-  }
+}
 
 .card-image {
     object-fit: contain;
@@ -106,6 +116,22 @@
 .card-text {
     padding: 1rem;
 }
+
+.card-icons {
+    padding: 2rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.card-icons-user {
+    position: absolute;
+    right: 1rem;
+}
+
+.icon {
+    padding: 1rem;
+}
+
 
 .categories {
     display: flex;
