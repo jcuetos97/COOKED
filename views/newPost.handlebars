@@ -14,24 +14,32 @@
         
         <label for="category-newPost">Choose a category:</label>
             <div class="categories">
-                <ul class="categories-link">
-                    <li class="category-wrapper">
-                        <a href="#" class="category-link"> Trending </a>
-                    </li>
-                    <li class="category-wrapper">
-                        <a href="#" class="category-link"> Pollo </a>
-                    </li>
+                <div class="category-link">
+                    <input type="radio" id="veggie" name="category" value="Veggie">
+                    <label for="veggie">Veggie</label>
+                </div>
+                <div class="category-link">
+                    <input type="radio" id="allMeats" name="category" value="All-Meats">
+                    <label for="allMeats">All-Meats</label>
+                </div>
+                <div class="category-link">
+                    <input type="radio" id="dessert" name="category" value="Dessert">
+                    <label for="dessert">Dessert</label>
+                </div>
+                
+                {{!-- <ul class="categories-link">
                     <li class="category-wrapper">
                         <a href="#" class="category-link"> Veggie </a>
                     </li>
                     <li class="category-wrapper">
-                        <a href="#" class="category-link"> Carne </a>
+                        <a href="#" class="category-link"> All-Meats </a>
                     </li>  
                     <li class="category-wrapper">
-                        <a href="#" class="category-link"> Repostería </a>
+                        <a href="#" class="category-link"> Dessert </a>
                     </li>     
-                </ul>
+                </ul> --}}
             </div>
         <button class="btn sign-up-btn" id="publish" type="submit">Publish</button>
     </form>
  </div>
+
