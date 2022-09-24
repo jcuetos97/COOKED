@@ -17,7 +17,9 @@
     background: #333;
     background: var(--yellow);
     box-shadow: 0 10px 100px rgba(0, 0, 0, 0.1); 
-    display: flex; }
+    display: flex;
+    position: fixed;
+ }
 
 .header-content {
     width: 100% ;
