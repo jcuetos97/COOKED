@@ -1,8 +1,39 @@
-<div class="user-posts">
+<div class="posts-container">
   {{#each userPosts}}
-    <a class="list-item" href="/dashboard/edit/{{id}}">
-      <span>{{title}}</span>
-      <span>{{postDate createdAt}}</span>
-    </a>
+    <div class="post-card">
+    <div>
+      <div class="card-header">
+        <div class="card-icons-user">
+          <a href="/dashboard/edit/{{id}}"><i class="fa-solid fa-pen-to-square fa-lg icon"></i></a>
+          <input type="hidden" id="post-id" value="{{id}}" />
+          <button type="button" id="delete-btn" class="btn-x"><i class="fa-solid fa-x fa-lg"></i></button>
+        </div>
+        
+        <h2> 
+          <a href=>{{title}}</a> 
+        </h2>
+        <div class="card-data">
+          <p>Posted on {{postDate createdAt}}</p>
+        </div>
+      </div>
+    
+      <div class="card-body">
+        <img src="/images/userUploads/{{file_img}}" alt="post-image" class="card-image"> 
+
+        <div class="recipe-body" style="display: none;">
+          {{body}}
+        </div>
+        <div class="card-text">
+          {{category}}
+        </div>        
+        
+      </div>
+      
+    </div>
+  </div>
   {{/each}}
 </div>
+
+<script src="/js/deletePost.js"></script>
+<script src="/js/showRecipe.js"></script>
+ 

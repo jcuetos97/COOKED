@@ -9,9 +9,6 @@ router.get('/', withAuth, async (req,res) => {
            include: [User],
         });
 
-        console.log('Posts de la DB');
-        console.log(posts);
-  
         const allPosts = posts.map((post) => post.get({ plain: true }));
    
         console.log(allPosts);
@@ -21,11 +18,34 @@ router.get('/', withAuth, async (req,res) => {
         allPosts,
         logged_in: req.session.logged_in,
         });
+
     } catch (err) {
         res.status(500).json(err);
     } 
 });
 
+router.get('/post/:id', async (req, res) => {
+    try {
+        const onePost  = await Post.findByPk(req.params.id, {
+            include: [
+              User,
+              {
+                model: Comment,
+                include: [User],
+              },
+            ],
+          })
+
+        const post = onePost.get({ plain: true });
+        console.log (onePost);
+        res.render('singlePost', { 
+            layout: 'dashboard',
+            post 
+        }); 
+    } catch (err) {
+        res.status(500).json(err);
+    } 
+});
 
 router.get('/welcome', (req,res) => {
     res.render('appWelcome', {
