@@ -31,11 +31,11 @@ router.get('/trending', withAuth, async (req, res) => {
             order: [[Rating, 'likes', 'DESC']],
             include: [Rating],
         });
-        const userPosts = trendPosts.map((post) => post.get({ plain: true }));
-        console.log(userPosts);
-        res.render('userPosts', {
+        const allPosts = trendPosts.map((post) => post.get({ plain: true }));
+        
+        res.render('allPosts', {
             layout: 'dashboard',
-            userPosts,
+            allPosts,
         });
 
     } catch (err) {
