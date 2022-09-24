@@ -36,7 +36,7 @@ router.post('/new', withAuth, multerInfo, async (req, res) => {
         res.status(500).json(err);
     }
 });
-=======
+
 router.post('/new', withAuth, async (req, res) => {
     try {
       const newPost = await Post.create({
