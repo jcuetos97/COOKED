@@ -20,6 +20,14 @@ Post.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        category: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        file_img: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
