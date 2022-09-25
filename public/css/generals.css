@@ -33,13 +33,14 @@ textarea {
     resize: none;
     font-family: inherit; } 
 
-/* Footer */
-.footer {
+/* New post button */
+.new-post {
     width: 100%;
+    background-color: var(--yellow);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 15px;
+    padding: .7rem;
 }
 
 .btn-new-post {
@@ -47,10 +48,12 @@ textarea {
     font-family: inherit;
     background-color: var(--dark);
     color:var(--white);
-    padding: 25px;
+    padding: .7rem;
     border-radius: 25px;
 }
 .btn-new-post:hover {
     transform: scale(1.1);
 }
+
+
 
