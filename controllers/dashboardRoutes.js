@@ -11,10 +11,10 @@ router.get('/myposts', withAuth, async (req,res) => {
                 user_id: req.session.user_id 
             }, 
             include: [User],
+            order: [['created_at', 'DESC']],
         });
   
         const userPosts = allPost.map((post) => post.get({ plain: true }));
-        console.log(userPosts);
         res.render('userPosts', {
             layout: 'dashboard',
             userPosts,
@@ -29,7 +29,7 @@ router.get('/trending', withAuth, async (req, res) => {
     try {
         const trendPosts = await Post.findAll({
             order: [[Rating, 'likes', 'DESC']],
-            include: [Rating],
+            include: [User, Rating],
         });
         const allPosts = trendPosts.map((post) => post.get({ plain: true }));
         
@@ -46,12 +46,12 @@ router.get('/trending', withAuth, async (req, res) => {
 
 router.get('/category/:category', withAuth, async (req, res) => {
     try {
-        console.log(req.params.category);
         const allPosts = await Post.findAll({
             where: {
                 category: req.params.category
             },
             include: [User],
+            order: [['created_at', 'DESC']],
         });
 
         const catPosts = allPosts.map((post) => post.get({ plain: true }));
@@ -75,12 +75,12 @@ router.get("/new", withAuth, (req, res) => {
 router.get("/edit/:id", withAuth, async (req, res) => {
     try {
 
-       const postData  =  await Post.findByPk(req.params.id);
+        const postData  =  await Post.findByPk(req.params.id);
         const post = postData.get({ plain: true });
         res.render("editPost", {
-         layout: "dashboard",
-         post
-         });
+            layout: "dashboard",
+            post
+        });
      } catch (err) {
          console.log(err);
          res.redirect("login");
