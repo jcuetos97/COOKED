@@ -14,7 +14,9 @@
 body {
     line-height: 1.5;
     font-size: 14px;
-    font-family: 'Poppins', sans-serif;}
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    }
 
 a {
     text-decoration: none;
@@ -31,15 +33,14 @@ textarea {
     resize: none;
     font-family: inherit; } 
 
-/* Footer */
-.footer {
-    position: absolute;
-    bottom:0;
+/* New post button */
+.new-post {
     width: 100%;
+    background-color: var(--yellow);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 15px;
+    padding: .7rem;
 }
 
 .btn-new-post {
@@ -47,10 +48,12 @@ textarea {
     font-family: inherit;
     background-color: var(--dark);
     color:var(--white);
-    padding: 25px;
+    padding: .7rem;
     border-radius: 25px;
 }
 .btn-new-post:hover {
     transform: scale(1.1);
 }
+
+
 
