@@ -36,7 +36,6 @@ router.post('/new', withAuth, multerInfo, async (req, res) => {
     }
 });
 
-<<<<<<< HEAD
 router.post('/new', withAuth, async (req, res) => {
     try {
       const newPost = await Post.create({
@@ -52,10 +51,8 @@ router.post('/new', withAuth, async (req, res) => {
     }
   });
   
-  router.put("/:id", withAuth, async (req, res) => {
-=======
- router.put("/:id", withAuth, async (req, res) => {
->>>>>>> 0f1171f83f7b6d18f13d5524b0cf738ed01758ca
+router.put("/:id", withAuth, async (req, res) => {
+
     try {
       Post.update(req.body,{
         where: {
@@ -85,4 +82,4 @@ router.post('/new', withAuth, async (req, res) => {
     }
   });
         
-module.exports = router;   
+module.exports = router;
