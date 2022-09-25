@@ -4,7 +4,7 @@ const { findAll } = require("../models/User");
 const withAuth = require('../utils/auth');
 const { route } = require("./homeRoutes");
 
-router.get('/', withAuth, async (req,res) => {
+router.get('/myposts', withAuth, async (req,res) => {
     try {
         const allPost = await Post.findAll({
             where: { 
@@ -31,11 +31,11 @@ router.get('/trending', withAuth, async (req, res) => {
             order: [[Rating, 'likes', 'DESC']],
             include: [Rating],
         });
-        const userPosts = trendPosts.map((post) => post.get({ plain: true }));
-        console.log(userPosts);
-        res.render('userPosts', {
+        const allPosts = trendPosts.map((post) => post.get({ plain: true }));
+        
+        res.render('allPosts', {
             layout: 'dashboard',
-            userPosts,
+            allPosts,
         });
 
     } catch (err) {
