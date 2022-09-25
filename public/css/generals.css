@@ -33,8 +33,8 @@ textarea {
     resize: none;
     font-family: inherit; } 
 
-/* Footer */
-.footer {
+/* New post button */
+.new-post {
     width: 100%;
     background-color: var(--yellow);
     display: flex;
@@ -54,4 +54,6 @@ textarea {
 .btn-new-post:hover {
     transform: scale(1.1);
 }
+
+
 

@@ -4,7 +4,7 @@ const { findAll } = require("../models/User");
 const withAuth = require('../utils/auth');
 const { route } = require("./homeRoutes");
 
-router.get('/', withAuth, async (req,res) => {
+router.get('/myposts', withAuth, async (req,res) => {
     try {
         const allPost = await Post.findAll({
             where: { 

@@ -65,36 +65,5 @@ router.post('/new', withAuth, multerInfo, async (req, res) => {
       res.status(400).json(err);
     }
   });
-    
- //Codigo Repetido... 
-// router.put("/:id", withAuth, async (req, res) => {
-//   try {
-//     Post.update(req.body,{
-//       where: {
-//         id: req.params.id
-//       }
-//     });
-
-//     res.status(200).end();
-      
-//   } catch (err) {
-//     res.status(400).json(err);
-//   }
-// });
-  
-// router.delete("/:id", withAuth, async (req, res) => {
-//   try {
-//     Post.destroy({
-//       where: {
-//         id: req.params.id
-//       }
-//     });
-
-//     res.status(200).end();
-      
-//   } catch (err) {
-//     res.status(400).json(err);
-//   }
-// });
-    
-module.exports = router; 
+        
+module.exports = router;   
