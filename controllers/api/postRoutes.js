@@ -36,7 +36,26 @@ router.post('/new', withAuth, multerInfo, async (req, res) => {
     }
 });
 
+<<<<<<< HEAD
+router.post('/new', withAuth, async (req, res) => {
+    try {
+      const newPost = await Post.create({
+        title: req.body.title,
+        body: req.body.body,
+        user_id: req.session.user_id
+        });
+        
+        res.json({ message: 'Your post has been published successfully!' });
+      
+    } catch (err) {
+      res.status(400).json(err);
+    }
+  });
+  
+  router.put("/:id", withAuth, async (req, res) => {
+=======
  router.put("/:id", withAuth, async (req, res) => {
+>>>>>>> 0f1171f83f7b6d18f13d5524b0cf738ed01758ca
     try {
       Post.update(req.body,{
         where: {
