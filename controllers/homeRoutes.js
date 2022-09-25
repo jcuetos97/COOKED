@@ -7,12 +7,11 @@ router.get('/', withAuth, async (req,res) => {
     try {
         const posts = await Post.findAll({
            include: [User],
+           order: [['created_at', 'DESC']],
         });
 
         const allPosts = posts.map((post) => post.get({ plain: true }));
    
-        console.log(allPosts);
-
         res.render('allPosts', {
         layout: 'dashboard',
         allPosts,

@@ -13,6 +13,9 @@
     
       <div class="card-body">
         <img src="/images/userUploads/{{file_img}}" alt="post-image" class="card-image"> 
+        <div class="recipe-body" style="display: none;">
+          <textarea>{{body}}</textarea>
+        </div>
         <div class="card-text">
           {{category}}
         </div>
@@ -22,3 +25,5 @@
   </div>
   {{/each}}
 </div>
+
+<script src="/js/showRecipe.js"></script>
