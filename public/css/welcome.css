@@ -102,6 +102,7 @@ images{
     width: 20%;
     margin: 10%;
     border-radius: 50px 50px 50px 5px;
+    top: 50%;
 }
 @keyframes luces {
     0%   {background-color:white; left:0px; right:5px;}
