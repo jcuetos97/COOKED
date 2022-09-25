@@ -1,0 +1,75 @@
+/* Forms */
+.form {
+    position: relative;
+    width: 70%;
+    max-width: 565px;
+    min-width: 250px;
+    padding: 15px;
+    background-color: rgba(55, 54, 68, 0.10);
+    border-radius: 1.5rem;
+}
+
+.form-body {
+    padding: 1rem;
+}
+
+.form-sub {
+    font-weight: 400;
+    font-size: 1.2rem;
+}   
+.form-input {
+    width: 100%;
+    padding: 0.5rem;
+    color: #1a1a1a;
+    background-color: #fff;
+    margin: 0.625rem 0;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+} 
+
+.form-input::placeholder {
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.sign-up {
+    font-family: inherit;
+    font-weight: inherit;
+    text-align: center;
+    margin: 25px;
+}
+.sign-up-text:hover {
+    color: #ffffff;
+}
+.btn {
+    font-family: inherit;
+    font-weight: inherit;
+    text-align: center;
+    display: inline-block;
+    padding: 0.7rem 1.5rem;
+    margin-top: .3rem;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 0.3rem;
+    outline: none;
+    background-color: var(--dark);
+    color: var(--papaya);
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+.btn:hover {
+    font-family: inherit;
+    font-weight: inherit;
+    background-color: #cecece;
+    color: #ffffff;
+}
+
+.btn-x {
+    font-size: inherit;
+    background-color: inherit;
+    color: var(--papaya);
+}
+
+@media only screen and (max-width: 67rem) {
+    .form-sub {
+        font-size: 1rem; } }

@@ -52,7 +52,7 @@ router.post("/:id", withAuth, multerInfo, async (req, res) => {
         }
       });
 
-      //borra el archivo que esta en la carpeta userUploads, que se llama req.body.file_img;
+     //borra el archivo que esta en la carpeta userUploads, que se llama req.body.file_img;
 
       const posts = await Post.findAll({
         where: {
@@ -89,3 +89,4 @@ router.delete("/:id", withAuth, async (req, res) => {
 });
     
 module.exports = router; 
+

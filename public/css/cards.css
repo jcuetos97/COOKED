@@ -1,0 +1,130 @@
+/* Cards */
+.post-card {
+    position: relative;
+    min-width: 250px;
+    max-width: 600px;
+    background-color: rgba(55, 54, 68, 0.10);
+    border-radius: 1.5rem;
+    margin: 0.5rem;
+    font-family: inherit;
+}
+
+.card-header {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+    padding: 1rem;
+    color: var(--papaya);
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-header-comment {
+    background-color: var(--dark);
+    color: var(--white);
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+    padding: 1rem;
+    color: var(--papaya);
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-data {
+    font-size: .55rem;
+    font-weight: 600;
+    color: var(--white); 
+}
+
+.card-image {
+    object-fit: contain;
+    width: 100%;
+}
+
+.card-text {
+    padding: 1rem;
+}
+
+.card-category {
+    display: block;
+    position: absolute;
+    right: 2rem;
+}
+
+.card-category-text {
+    padding: .5rem;
+    font-size: .8rem;
+    text-align: center;
+    background-color: var(--dark);
+    color: var(--white);
+    border-radius: 1rem;
+}
+@media only screen and (max-width: 30rem) {
+    .card-category{
+        display: none; } 
+}
+
+.card-category-user {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.card-category-text-user {
+    padding: .2rem;
+    font-size: .8rem;
+    text-align: center;
+    background-color: var(--dark);
+    color: var(--white);
+    border-radius: 1rem;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+}
+
+.card-icons {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.card-icons-user {
+    position: absolute;
+    right: 1rem;
+}
+
+.icon {
+    padding: 1rem;
+}
+
+
+.categories {
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.categories-link {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.category-wrapper {
+    padding: 7px;
+}
+
+.category-link {
+    background-color: var(--dark);
+    border-radius: 15px;
+    font-size: .7rem;
+    color: var(--white);
+    padding: 7px;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    align-items: center;
+}

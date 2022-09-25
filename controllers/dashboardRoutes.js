@@ -4,7 +4,7 @@ const { findAll } = require("../models/User");
 const withAuth = require('../utils/auth');
 const { route } = require("./homeRoutes");
 
-router.get('/', withAuth, async (req,res) => {
+router.get('/myposts', withAuth, async (req,res) => {
     try {
         const allPost = await Post.findAll({
             where: { 
@@ -32,6 +32,7 @@ router.get('/trending', withAuth, async (req, res) => {
             include: [User, Rating],
         });
         const allPosts = trendPosts.map((post) => post.get({ plain: true }));
+        
         res.render('allPosts', {
             layout: 'dashboard',
             allPosts,
