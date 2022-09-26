@@ -1,0 +1,12 @@
+.card-icons-wrapper {
+  display: inline-flex;
+  padding: 1rem;
+  background-color: var(--dark);
+  color: var(--papaya);
+  border-radius: 1rem;
+  gap: 1rem;
+}
+
+.count {
+  font-weight: 700;
+}

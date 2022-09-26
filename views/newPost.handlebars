@@ -2,7 +2,7 @@
     <div class="card-header">
         <p>New Post</p> 
     </div>
-    <form class="card-body newPost-form" action="/api/post/new" method="POST" enctype="multipart/form-data">   
+    <form class="form-body newPost-form" action="/api/post/new" method="POST" enctype="multipart/form-data">   
         <label for="title-newPost">Title.</label>
         <input class="form-input" type="text" id="title-newPost" name="name"/>
 
@@ -26,19 +26,8 @@
                     <input type="radio" id="dessert" name="category" value="Dessert">
                     <label for="dessert">Dessert</label>
                 </div>
-                
-                {{!-- <ul class="categories-link">
-                    <li class="category-wrapper">
-                        <a href="#" class="category-link"> Veggie </a>
-                    </li>
-                    <li class="category-wrapper">
-                        <a href="#" class="category-link"> All-Meats </a>
-                    </li>  
-                    <li class="category-wrapper">
-                        <a href="#" class="category-link"> Dessert </a>
-                    </li>     
-                </ul> --}}
             </div>
+            
         <button class="btn sign-up-btn" id="publish" type="submit">Publish</button>
     </form>
  </div>

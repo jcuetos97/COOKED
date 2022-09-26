@@ -3,6 +3,9 @@
   <div class="post-card">
     <div>
       <div class="card-header">
+        <div class="card-category">
+          <p class="card-category-text">{{category}}</p>
+        </div>
         <h2> 
           <a href="/post/{{id}}">{{title}}</a> 
         </h2>
@@ -13,12 +16,24 @@
     
       <div class="card-body">
         <img src="/images/userUploads/{{file_img}}" alt="post-image" class="card-image"> 
-        <div class="card-text">
-          {{category}}
+
+        <div class="recipe-body" style="display: none;">
+          <textarea>{{body}}</textarea>
+        </div>
+        <div class="card-icons">
+          <div class="card-icons-wrapper"> 
+            <a><i id="heart-icon" class="fa-regular fa-heart fa-xl" data-count="0"></i></a> 
+            <p class="count">1</p>
+          </div>
+          <div class="card-icons-wrapper">
+           <a href="/post/{{id}}"><i id="comment-icon" class="fa-regular fa-comment fa-xl" data-count="0"></i></a>
+           <p class="count">1</p>
+          </div>
         </div>
       </div>
-      
     </div>
   </div>
   {{/each}}
 </div>
+
+<script src="/js/showRecipe.js"></script>

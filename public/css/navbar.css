@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-
 :root {
     --light-blue: #05A3C7; 
     --dark-blue: #086788; 
@@ -40,7 +39,8 @@
 
 @media only screen and (max-width: 55rem) {
     .header-title {
-         font-size: 2.5rem; } 
+        font-size: 2.5rem; 
+    } 
 }        
 
 .header-register {
@@ -51,7 +51,8 @@
     .header-register {
         position: absolute; 
         top: 1rem;
-        right:0; } 
+        right:0; 
+    } 
 }
 
 .header-list-item {
@@ -62,7 +63,7 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: color .3s; 
-    padding: 2rem; 
+    padding: 0 2rem;  
 }
 
 .header-link:hover {
@@ -75,6 +76,12 @@
 
 .header-link:hover i{
     display: inherit;
+}
+
+.active {
+    color: var(--dark-blue);
+    border-radius: 1rem;
+    background-color: var(--white);
 }
 
 .sub-header {

@@ -7,7 +7,7 @@ const deletePostHandler = async function(event) {
         method: "DELETE"
     });
     if (response.ok) {
-        document.location.replace("/dashboard");
+        document.location.replace("/dashboard/myposts");
     } else {
         alert('Failed to delete post.');
     }

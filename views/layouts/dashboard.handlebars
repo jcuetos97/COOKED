@@ -7,10 +7,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>COOKED</title> 
   <script src="https://kit.fontawesome.com/e601f25512.js" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/x-icon" href="/images/others/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/cards.css">
+  <link rel="stylesheet" href="/css/forms.css">
+  <link rel="stylesheet" href="/css/footer.css">
   <link rel="stylesheet" href="/css/generals.css">
   <link rel="stylesheet" href="/css/navbar.css">
   <link rel="stylesheet" href="/css/containers.css">
-  <link rel="stylesheet" href="/css/forms&cards.css">
+  <link rel="stylesheet" href="/css/likes.css">
+  
+ 
 </head>
 
 <body>
@@ -34,19 +41,19 @@
       <div class="sub-header">
         <ul class="sub-header-content">
             <li>
-                <a href="/dashboard/trending" class="header-link"> Trending <i class="fa-solid fa-fire"></i></a>
+                <a href="/dashboard/trending" class="header-link" id="trending"> Trending <i class="fa-solid fa-fire" id="trending-icon"></i></a>
             </li>
             <li>
-                <a href="/dashboard/category/Veggie" class="header-link"> Veggie <i class="fa-solid fa-seedling"></i></a>
+                <a href="/dashboard/category/Veggie" class="header-link" id="veggie"> Veggie <i class="fa-solid fa-seedling" id="veggie-icon"></i></a>
             </li>
             <li>
-                <a href="/dashboard/category/All-Meats" class="header-link"> All-Meats <i class="fa-solid fa-fish"></i></a>
+                <a href="/dashboard/category/All-Meats" class="header-link" id="all-meats"> All-Meats <i class="fa-solid fa-fish" id="all-meats-icon"></i></a>
             </li>     
             <li>     
-                <a href="/dashboard/category/Dessert" class="header-link"> Desserts <i class="fa-solid fa-ice-cream"></i></a>
+                <a href="/dashboard/category/Dessert" class="header-link" id="desserts"> Desserts <i class="fa-solid fa-ice-cream" id="desserts-icon"></i></a>
             </li> 
              <li>
-                <a href="/dashboard" class="header-link"> My posts <i class="fa-solid fa-user"></i></a>
+                <a href="/dashboard/myposts" class="header-link" id="myposts"> My posts <i class="fa-solid fa-user" id="myposts-icon"></i></a>
              </li>
 
         </ul>
@@ -78,16 +85,54 @@
             </div>
           </div>
       </div>
+    
+    <section class="new-post">
+        <a href="/dashboard/new" class="btn-new-post">➕ New Post</a>
+    </section>
 
     <div class="dashboard-container">
         {{{ body }}}
-    <footer class="footer">
-        <a href="/dashboard/new" class="btn-new-post">➕ New Post</a>
-    </footer>
     </div>
+
+    <footer class="main-footer">
+      <div class="footer-container">
+        <div class="main-footer__upper">
+          <div class="main-footer__row main-footer__row-1">
+            <h2>
+              <span>Social</span>
+            </h2>
+            <div class="main-footer__social-cont">
+              <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/jcuetos97/">
+                <img class="main-footer__icon" src="/images/others/linkedin-ico.png" alt="icon"/>
+              </a>
+              <a target="_blank" rel="noreferrer" href="https://github.com/jcuetos97/COOKED">
+                <img class="main-footer__icon" src="/images/others/github-ico.png" alt="icon"/>
+              </a>
+              <a target="_blank" rel="noreferrer" href="https://www.instagram.com">
+                <img class="main-footer__icon main-footer__icon--mr-none" src="/images/others/insta-ico.png" alt="icon"/>
+              </a>
+            </div>
+          </div>
+
+          <div class="main-footer__row main-footer__row-2">
+            <h2>Creators</h2>
+            <p class="contributors-text">Diego Sadurni</p>
+            <p class="contributors-text">Juan Jose Espinosa</p>
+            <p class="contributors-text">Tere Quintero</p>
+            <p class="contributors-text">Arnol Segovia</p>
+            <p class="contributors-text">Javier Contreras</p>
+
+            <p class="main-footer__short-desc">
+              COOKED is a social app that connects people with a common need and passion: <strong>cooking.</strong>
+            </p>
+            </strong>
+          </div>
+        </div>
+    </footer>
     
     
 </body>
 <script src="/js/logout.js"></script>
 <script src="/js/menu.js"></script>
+<script src="/js/navbar.js"></script>
 </html>

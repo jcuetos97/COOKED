@@ -3,15 +3,11 @@ const exphbs = require('express-handlebars');
 const path = require('path');
 const multer = require('multer');
 const { v4: uuidv4 } = require('uuid');
+const helpers = require('./helpers');
 
 const app = express();
 
-const hbs = exphbs.create({ helpers: {
-    postDate: date => {
-      return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
-    }
-  }
-});
+const hbs = exphbs.create({ helpers });
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
