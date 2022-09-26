@@ -4,3 +4,5 @@ const handleLike = (id) => {
 if (likes === false) {
     setPost([...Post], [Post.likes -= 1])
 }
+// setPost([...Post], [Post.liked_by_user = !liked])
+this.setState({ Post.likes: handleLike });
