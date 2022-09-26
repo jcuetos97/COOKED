@@ -7,7 +7,6 @@
 
 .welcome-img-container {
    width: 70%;
-   background-color: var(--yellow);
 }
 
 .welcometxt-container {
@@ -19,17 +18,18 @@
 .welcome-img {
     object-fit: cover;
     width: 100%;
-    height: 85vh;
+    height: 100%;
 }
 
 @media only screen and (max-width: 75rem) {
     .welcome-img-container {
         width:100%; }  
     .welcometxt-container {
+        width:100%;
         display: flex;
         flex-wrap: wrap;
         align-items: space-evenly;
-        width:100%; } 
+    } 
 }
 
 .welcometxt {
@@ -67,11 +67,12 @@
 
 .welcome-icons-wrapper p {
     margin-left: 2rem; 
+    font-size: 1.2rem;
 }
 
 .link{
     font-style: inherit;
-    font-weight: 500;
+    font-weight: 700;
     color: var(--yellow);
 }
 
