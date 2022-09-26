@@ -1,104 +1,109 @@
-.container {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  /* ===== Project CSS ===== */
-  .btn-likes {
-    height: 88px;
-    outline: 0;
-    border: 2px solid #ccc;
-    color: #000;
-    cursor: pointer;
-    overflow: visible;
-    position: relative;
-    display:flex;
-    justify-content: space-between;
-    box-shadow: 0px 3px 25px rgba(0, 0, 0, 0.05);
-    transition: 1.5s cubic-bezier(.21,.04,.26,.99);
-  }
-  .btn-likes:hover {
-    box-shadow: 0px 3px 25px rgba(0, 0, 0, 0.2);
-    border-color: var(--red);
-  }
-  .btn-like {
-    padding: 1.5rem 1.5rem 1.5rem 6rem;
-    font-size: 2rem;
-    border-radius: 10px;
-    background: #fff;
-    transition: 1.5s cubic-bezier(.21,.04,.26,.99);
-  }
-  .btn-like.liked {
-    background: var(--yellow);
-    border-color: var(--red);
-  }
-
-  /*-- Button Icon -- */
-  .btn-icon {
-    display: inline-block;
-    width: 32px;
-    height: 36px;
-    position: absolute;
-    left: 1.5rem;
-    transition: 1s cubic-bezier(.21,.04,.26,.99);
-    transform: rotate(0deg)
-  }
-  .btn-likes:hover .btn-icon {
-    color: var(--dark-blue);
-  }
-  .btn.liked:hover .btn-icon {
-    color: var(--dark);
-  }
-  .liked .btn--icon-default {
-    transform: rotate(-90deg)
-  }
-  .btn-likes:not(.liked).btn--icon-liked {
-    transform: rotate(-90deg)
-  }
-  .liked .btn--icon-default,
-  .btn--icon-liked {
-    opacity: 0;
-    color: #fff;
-    position: absolute;
-  }
-  .btn--icon-default,
-  .liked .btn--icon-liked {
-    opacity: 1;
-    left: 1.5rem;
-  }
-  /*-- Button Content -- */
-  .btn-content {
-    transition: transform 0.1s ease;
-    display: inline-block;
-    position: absolute;
-    right: 0;
-  }
-  .liked .btn-content {
-    color: var(--white);
-  }
-  .btn:hover.liked .btn-content {
-    color: var(--black);
-  }
-  .btn:not(.liked) .btn-content--default {
-    transform: translate(-56px)
-  }
-  .liked .btn-content--default {
-    transform: translate(-56px)
-  }
-  #btn-counter { margin-right: 39px; }
-  #btn-counter:after,
-  #btn-counter:hover:after { text-shadow: none; }
-  #btn-counter:after {
-    border-radius: 3px;
-    padding: 0 8px;
-    color: var(--dark);
-    content: attr(data-count);
-    left: 100%;
-    margin-left: 8px;
-    margin-right: -13px;
-    position: absolute;
-    top: -1px;
-  }
+:root {
+  --light-blue: #05A3C7;
+  --dark-blue: #086788;
+  --yellow: #F0C808;
+  --papaya: #FFF1D0;
+  --dark: #333;
+}
+.like-container {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* ===== Project CSS ===== */
+.btn-likes {
+  height: 88px;
+  outline: 0;
+  border: 2px solid #ccc;
+  color: #000;
+  cursor: pointer;
+  overflow: visible;
+  position: relative;
+  display:flex;
+  justify-content: space-between;
+  box-shadow: 0px 3px 25px rgba(0, 0, 0, 0.05);
+  transition: 1.5s cubic-bezier(.21,.04,.26,.99);
+}
+.btn-likes:hover {
+  box-shadow: 0px 3px 25px rgba(0, 0, 0, 0.2);
+  border-color: var(--red);
+}
+.btn-like {
+  padding: 1.5rem 1.5rem 1.5rem 6rem;
+  font-size: 2rem;
+  border-radius: 10px;
+  background: #fff;
+  transition: 1.5s cubic-bezier(.21,.04,.26,.99);
+}
+.btn-like.liked {
+  background: var(--yellow);
+  border-color: var(--red);
+}
+/*-- Button Icon -- */
+.btn-icon {
+  display: inline-block;
+  width: 32px;
+  height: 36px;
+  position: absolute;
+  left: 1.5rem;
+  transition: 1s cubic-bezier(.21,.04,.26,.99);
+  transform: rotate(0deg)
+}
+.btn-likes:hover .btn-icon {
+  color: var(--dark-blue);
+}
+.btn.liked:hover .btn-icon {
+  color: var(--dark);
+}
+.liked .btn--icon-default {
+  transform: rotate(-90deg)
+}
+.btn-likes:not(.liked).btn--icon-liked {
+  transform: rotate(-90deg)
+}
+.liked .btn--icon-default,
+.btn--icon-liked {
+  opacity: 0;
+  color: #fff;
+  position: absolute;
+}
+.btn--icon-default,
+.liked .btn--icon-liked {
+  opacity: 1;
+  left: 1.5rem;
+}
+/*-- Button Content -- */
+.btn-content {
+  transition: transform 0.1s ease;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+}
+.liked .btn-content {
+  color: var(--white);
+}
+.btn:hover.liked .btn-content {
+  color: var(--black);
+}
+.btn:not(.liked) .btn-content--default {
+  transform: translate(-56px)
+}
+.liked .btn-content--default {
+  transform: translate(-56px)
+}
+#btn-counter { margin-right: 39px; }
+#btn-counter:after,
+#btn-counter:hover:after { text-shadow: none; }
+#btn-counter:after {
+  border-radius: 3px;
+  padding: 0 8px;
+  color: var(--dark);
+  content: attr(data-count);
+  left: 100%;
+  margin-left: 8px;
+  margin-right: -13px;
+  position: absolute;
+  top: -1px;
+}

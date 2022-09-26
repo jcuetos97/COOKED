@@ -16,7 +16,7 @@ const updatePostHandler = async function(event) {
             headers: { "Content-Type": "application/json" }
         });
         if (response.ok) {
-            document.location.replace("/dashboard");
+            document.location.replace("/dashboard/myposts");
         } else {
             alert('Failed to edit post.');
         }

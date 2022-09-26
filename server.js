@@ -30,9 +30,8 @@ const hbs = exphbs.create({ helpers: {
   postDate: date => {
     return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
   }
-}
-  
- });
+}  
+});
 
 // Default engine and extension provided
 app.engine('handlebars', hbs.engine);
@@ -50,6 +49,6 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.use(routes);
 
 // Turn on server and connection to database
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log(`Now listening in http://localhost:${PORT}`))
 }); 
