@@ -4,6 +4,7 @@ const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers/');
+const helpers = require('./utils/helpers');
 
 // Setting up PORT and app
 const app = express();
@@ -11,7 +12,6 @@ const PORT = process.env.PORT || 3005;
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
-
 
 const sess = {
   secret: 'Super secret secret',
@@ -25,19 +25,13 @@ const sess = {
 
 app.use(session(sess));
 
-// Handlebars 
-const hbs = exphbs.create({ helpers: {
-  postDate: date => {
-    return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
-  }
-}
-  
- });
+
+const hbs = exphbs.create({ helpers });
+
 
 // Default engine and extension provided
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-
 
 // Express middleware
 app.use(express.json());
