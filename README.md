@@ -7,7 +7,7 @@
 COOKED is an application that allows users to connect and share their passion and interest for cooking. In this social platform users are able to post questions and recipes, and receive feedback from other users through likes and comments.   
 
 ![Demo](./public/images/demo/SS1.png)
-!(./public/images/demo/SS2.png)
+![Demo](./public/images/demo/SS2.png)
 
 ## Table of Contents
 * [Description](#description)
