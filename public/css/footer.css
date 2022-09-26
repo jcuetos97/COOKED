@@ -3,9 +3,11 @@
     color: var(--white); 
     z-index: 1111;
     padding: 1rem;
+    width: 100%;
 }
 
 .main-footer__upper {
+
     display: flex;
     justify-content: space-between;
     padding: 5rem 0; 

@@ -1,80 +1,12 @@
-
-
-
-
-
-.like-btn-p {
-    margin: 30px auto 0 auto;
-    width: 450px;
-  
+.card-icons-wrapper {
+  display: inline-flex;
+  padding: 1rem;
+  background-color: var(--dark);
+  color: var(--papaya);
+  border-radius: 1rem;
+  gap: 1rem;
 }
 
-
-.btn-like {
-  box-shadow: 1px 1px 0 rgba(255,255,255,0.5) inset;
-  border-radius: 3px;
-  border: 1px solid;
-  display: inline-block;
-  height: 18px;
-  line-height: 18px;
-  padding: 0 8px;
-  position: relative;
-
-  font-size: 12px;
-  text-decoration: none;
-  text-shadow: 0 1px 0 rgba(255,255,255,0.5);
-}
-
-.btn-like-counter { margin-left: 39px; }
-.btn-like-counter:after,
-.btn-like-counter:hover:after { text-shadow: none; }
-.btn-like-counter:after {
-  border-radius: 3px;
-  border: 1px solid #d3d3d3;
-  background-color: #eee;
-  padding: 0 8px;
-  color: #777;
-  content: attr(data-count);
-  left: 100%;
-  margin-left: 8px;
-  margin-right: -13px;
-  position: absolute;
-  top: -1px;
-}
-.btn-like-counter:before {
-  transform: rotate(45deg);
-  filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.7071067811865476, M12=-0.7071067811865475, M21=0.7071067811865475, M22=0.7071067811865476, sizingMethod='auto expand');
-
-  background-color: rgb(231, 228, 56);
-  border: 1px solid #d3d3d3;
-  border-right: 0;
-  border-top: 0;
-  content: '';
-  position: absolute;
-  right: -13px;
-  top: 5px;
-  height: 6px;
-  width: 6px;
-  z-index: 1;
-  zoom: 1;
-}
-
-.btn-like {
-  background-color: #dbdbdb;
-  border-color: #bbb;
-  color: rgb(102, 102, 102);
-}
-.btn-like:hover,
-.btn-like.active {
-  text-shadow: 0 1px 0 #7e7d7d;
-  background-color: #130505;
-  border-color: #cebb0f;
-}
-.btn-like:active { box-shadow: 0 0 5px 3px rgba(0,0,0,0.2) inset; }
-.btn-like span { color: #f64136; }
-.btn-like:hover, .btn:hover span,
-.btn-like.active, .btn.active span { color: #eeeeee; }
-.btn-like:active span {
-  color: #b12f27;
-  text-shadow: 0 1px 0 rgba(255,255,255,0.3);
+.count {
+  font-weight: 700;
 }

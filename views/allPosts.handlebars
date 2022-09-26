@@ -10,7 +10,7 @@
           <a href="/post/{{id}}">{{title}}</a> 
         </h2>
         <div class="card-data">
-          <p>Posted by {{user.username}} on {{createdAt}}</p>
+          <p>Posted by {{user.username}} on {{postDate createdAt}}</p>
         </div>
       </div>
      
@@ -19,26 +19,21 @@
         <div class="recipe-body" style="display: none;">
             {{body}}
         </div>
-
-        
-        
-
         <div class="card-icons">
-           <a href="#"><i class="fa-regular fa-heart fa-xl"></i></a>
-           <a href="/post/{{id}}"><i class="fa-regular fa-comment fa-xl"></i></a>
+          <div class="card-icons-wrapper"> 
+            <a><i id="heart-icon" class="fa-regular fa-heart fa-xl" data-count="0"></i></a> 
+            <p class="count">1</p>
+          </div>
+          <div class="card-icons-wrapper">
+           <a href="/post/{{id}}"><i id="comment-icon" class="fa-regular fa-comment fa-xl" data-count="0"></i></a>
+           <p class="count">1</p>
+          </div>
         </div>
       </div>
-  </div>
-      <p class="like-btn-p">
-      <a href="#"  class="btn-like btn-like-counter" data-count="0"><span>&#x2764;</span></a>  
-      </p>
-
-
-
     </div>
-    
   </div>
   {{/each}}
 </div>
 
 <script src="/js/showRecipe.js"></script>
+<script src="/js/likes.js"></script>
