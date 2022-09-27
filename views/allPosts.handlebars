@@ -21,18 +21,9 @@
         </div>
         <div class="card-icons">
           <div> 
-                 <button class="btnl btn-like" onClick="onClick()">
-        <span class="btn-icon btn--icon-default">
-          <span class="fa fa-heart" ></span>
-        </span>
-        <span class="btn-icon btn--icon-liked">
-          <span class="fa fa-heart"></span>
-        </span>
-       
-        <span id="btn-counter"></span>
-       
-       
-      </button>
+               <div class="card-icons-wrapper"> 
+            <a><i id="heart-icon" class="fa-regular fa-heart fa-xl" data-count="0"></i></a> 
+            <p class="count">1</p>    
           </div>
           <div class="card-icons-wrapper">
            <a href="/post/{{id}}"><i id="comment-icon" class="fa-regular fa-comment fa-xl" data-count="0"></i></a>
