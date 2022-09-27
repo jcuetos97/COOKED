@@ -4,16 +4,16 @@
         <p>Edit Post</p>
     </div>
     <form id="edit-post-form" class="card-body" action="/api/post/{{post.id}}" method="POST" enctype="multipart/form-data">
-        <input type="hidden" id="post-id" name="" value="{{post.file_img}}" />
+        <input type="hidden" id="post-id" name="file_img" value="{{post.file_img}}" />
 
         <label class="form-label" for="post-title">Title</label>
-        <input type="text" id="post-title" name="name" value="{{post.title}}" class="form-input" />
+        <input type="text" id="post-title" name="name" value="{{post.title}}" class="form-input" required />
 
         <label class="form-label" for="image-editPost">Image.</label>
         <input class="form-input" type="file" name="fileImg">
 
         <label class="form-label" for="post-body">Content</label>
-        <textarea id="post-body"  name="recipe" class="form-input">{{post.body}}</textarea>
+        <textarea id="post-body"  name="recipe" class="form-input" required>{{post.body}}</textarea>
 
         <label>{{post.category}}</label>
 
@@ -38,6 +38,3 @@
     </form>
     </div>
 </div>
-
-{{!-- <script src="/js/editPost.js"></script> --}}
-{{!-- <script src="/js/deletePost.js"></script> --}}
