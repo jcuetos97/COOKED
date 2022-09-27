@@ -56,10 +56,12 @@ router.post("/:id", withAuth, multerInfo, async (req, res) => {
         }
       });
 
+
       
       if (req.file != undefined) {
         fs.unlinkSync(path.join(__dirname, `../../public/images/userUploads/${req.body.file_img}`));
       }      
+
 
       const posts = await Post.findAll({
         where: {
@@ -101,3 +103,4 @@ router.delete("/:id", withAuth, async (req, res) => {
 });
     
 module.exports = router; 
+

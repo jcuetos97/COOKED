@@ -3,9 +3,10 @@
     <div class="card-header">
         <p>Edit Post</p>
     </div>
+
     <form id="edit-post-form" class="card-body" action="/api/post/{{post.id}}" method="POST" enctype="multipart/form-data">
         <input type="hidden" id="post-id" name="file_img" value="{{post.file_img}}" />
-
+        
         <label class="form-label" for="post-title">Title</label>
         <input type="text" id="post-title" name="name" value="{{post.title}}" class="form-input" required />
 
@@ -32,9 +33,8 @@
                     <label for="dessert">Dessert</label>
                 </div>
             </div>
-            
-
         <button type="submit" id="update-btn" class="btn">Update</button>
     </form>
     </div>
 </div>
+
