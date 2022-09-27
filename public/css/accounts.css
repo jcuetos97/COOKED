@@ -20,11 +20,13 @@
   margin:30px auto;
   box-shadow: 0 0 100px rgba(0,0,0, .3);
   padding:0;
-  margin:0;
   font-size:14px;
   font-family: "Exo 2", sans-serif;
   color: #333;
-  background-color: var(--yellow)
+  background-color: var(--yellow);
+  margin-top: 40px;
+  margin-bottom: 40px;
+  
 }
 .card-header-pic{
   position: relative;
@@ -92,9 +94,9 @@
   transform: translate(-50%, -50%);
 }
 
-.card-body{
+.card-body-card{
   text-align:center;
-  padding-left: 10px;
+  margin-top: 20px;
 }
 
 .name{
@@ -144,7 +146,7 @@
   font-weight: 300;
   font-size:18px;
   letter-spacing: 1px;
-  color: #95989A;
+  color: var(--papaya);
 }
 
 .stat .value{
@@ -152,4 +154,15 @@
   font-weight: 700;
   font-size:25px;
   margin-top: 5px;
+}
+
+@media only screen and (max-width: 75rem) {
+    .card {
+        width:100%; }  
+    .card-header-pic{
+        width:100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: space-evenly;
+    } 
 }
