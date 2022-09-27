@@ -1,12 +1,15 @@
 const router = require('express').Router();
+const fs = require('fs');
+const path = require('path');
 const { Post, User } = require('../../models');
+const { getAttributes } = require('../../models/User');
 const withAuth = require('../../utils/auth');
 const multerInfo = require('../../utils/uploadImg');
 
 router.post('/new', withAuth, multerInfo, async (req, res) => {
     try {
         let img;
-        req.file == undefined ? img = 'NULL' : img = req.file.filename;
+        req.file == undefined ? img = 'none' : img = req.file.filename;
         await Post.create({
             title: req.body.name, 
             body: req.body.recipe,
@@ -40,7 +43,8 @@ router.post('/new', withAuth, multerInfo, async (req, res) => {
 router.post("/:id", withAuth, multerInfo, async (req, res) => {
     try {      
       let img;
-      req.file == undefined ? img = req.body.file_img : img = req.file.filename; //else: bandera borrar ON
+      req.file == undefined ? img = req.body.file_img : img = req.file.filename;
+
       await Post.update({ 
         title: req.body.name, 
         body: req.body.recipe, 
@@ -53,7 +57,12 @@ router.post("/:id", withAuth, multerInfo, async (req, res) => {
         }
       });
 
-     //borra el archivo que esta en la carpeta userUploads, que se llama req.body.file_img;
+
+      
+      if (req.file != undefined) {
+        fs.unlinkSync(path.join(__dirname, `../../public/images/userUploads/${req.body.file_img}`));
+      }      
+
 
       const posts = await Post.findAll({
         where: {
@@ -76,15 +85,20 @@ router.post("/:id", withAuth, multerInfo, async (req, res) => {
   
 router.delete("/:id", withAuth, async (req, res) => {
     try {
+      const fileName = await Post.findByPk(req.params.id, {attributes: ['file_img']});
+      
       Post.destroy({
         where: {
           id: req.params.id
         }
       });
+      
+      fs.unlinkSync(path.join(__dirname, `../../public/images/userUploads/${fileName.file_img}`));
   
       res.status(200).end();
        
     } catch (err) {
+      console.log(err);
       res.status(400).json(err);
     }
 
