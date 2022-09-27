@@ -39,6 +39,7 @@ router.post('/new', withAuth, multerInfo, async (req, res) => {
     }
 });
 
+
 router.post("/:id", withAuth, multerInfo, async (req, res) => {
     try {      
       let img;
@@ -100,7 +101,9 @@ router.delete("/:id", withAuth, async (req, res) => {
       console.log(err);
       res.status(400).json(err);
     }
+
 });
     
 module.exports = router; 
+
 

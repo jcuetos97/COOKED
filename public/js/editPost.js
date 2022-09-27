@@ -6,6 +6,7 @@
 //     const postId = document.getElementById('post-id');
 
 
+
 //     if (body && title) {
 //         const response = await fetch("/api/post/" + postId.value, {
 //             method: "PUT",
@@ -22,6 +23,7 @@
 //         }
 //     }
 // };
+
 
 // // const form =  document.querySelector('#edit-post-form');
 // // form.addEventListener("submit", updatePostHandler);

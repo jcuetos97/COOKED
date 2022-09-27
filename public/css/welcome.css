@@ -1,99 +1,117 @@
-.tablita {
-        display: grid;
-        grid-template-columns: repeat(8, 1fr);
-        grid-gap: 10px;
-        grid-auto-rows: 100px;
-        grid-template-areas:
-          "a a a a b b b b"
-          "a a a a b b b b"
-          "a a a a b b b b"
-          "a a a a d d d d";
-        width: 100%;
-      } 
-
-
-.footermain{
-    background-color: #F0C808;
-    width: 70%;
-    font-size: 20px;
+.welcome-container {
     display: flex;
-}
-
-.footermain thanku{
-    text-align: left;
-}
-
-.footermain mx{
-    text-align: right;
-}
-
-.image {
-    grid-area: a;
-    display: left;
+    flex-wrap: wrap;
     width: 100%;
-    padding-left: 20%;
-    padding-top: 3%;
-  }
+    min-height: 85vh;
+} 
 
-
-.primertexto{
-    grid-area: b;
-    justify-self: start;
-    padding-right: 20%;
-    margin-top: 6%;
-    margin-left: 7%;
+.welcome-img-container {
+   width: 70%;
 }
 
-.welcome{
-    font-size: 18;
-    color:white;
-    text-align: left;
+.welcometxt-container {
+    padding: 1rem;
+    width: 30%;
+    background-color: var(--dark);
+}
+
+.welcome-img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+@media only screen and (max-width: 75rem) {
+    .welcome-img-container {
+        width:100%; }  
+    .welcometxt-container {
+        width:100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: space-evenly;
+    } 
+}
+
+.welcometxt {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--papaya);
+    margin-left: 1rem;
+}
+
+.welcometxt-body {
+    margin-left: 1rem;
+    font-size: 1.2rem;
+    color: var(--papaya);
+    padding: 1rem;
+}
+@media only screen and (max-width: 75rem) {
+    .welcometxt-body {
+        font-size: 1rem; }  
+}
+
+.welcome-icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+    color: var(--yellow);
+}
+
+.welcome-icons-wrapper {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;  
+    padding: 1.5rem;
+}
+
+.welcome-icons-wrapper p {
+    margin-left: 2rem; 
+    font-size: 1.2rem;
+}
+
+.link{
+    font-style: inherit;
+    font-weight: 700;
+    color: var(--yellow);
+}
+
+.link:hover{
+    color: white;
     font-style: italic;
 }
 
-.welcometxt{
-    font-size: 18;
-    color: white;
-    text-align: left;
-}
+.grid-container {
+    grid-template-columns: auto;
+  }
 
-.welcometxt1{
-    font-size: 15;
-    color: #9E8409;
-    text-align: left;
-}
-
-.logoutensilstodos{
+.grid-container img{
+    width: 60%;
     display: flex;
-    padding: 3%;
-    padding-right: 30%;
-    justify-content: space-between;
+    padding-right: 10%;
 }
 
-.logoutensilstodos i{
-    color: #9E8409;
-    font-size: 3rem;
+.grid-item {
+    border: .5px solid rgba(0, 0, 0, 0.8);
+    font-size: 15px;
+    text-align: right;
+    padding: 25px;
+  }
+
+.continue{
+    font-style: italic;
+    color: gray;
 }
 
-.new{
-    display: flex;
-    height: 100px;
-    align-items: flex-start;
-    margin: 10%;
+.continue:hover{
+    color: blue;
 }
 
-images{
-    display: flex;
-    align-items: center;
-}
 
-.new img{
-    width: 30%;
-    display: flex;
-    padding-bottom: 5%;
-}
 
-.whats{
+
+
+/* .whats{
     background-color: white;
     animation-name: luces;
     animation-duration: 1.5s;
@@ -109,65 +127,15 @@ images{
     25%  {background-color: #f0c808; left:5px; right:0px;}
     50%  {background-color: white; left:0px; right:5px;}
     75%  {background-color: #f0c808; left:5px; right:0px;}
-    100% {background-color: white; left:0px; right:5px;}
-  }
+    100% {background-color: white; left:0px; right:5px;} */
+  /* } */
 
-.whats h1{
+/* .whats h1{
     color: gray;
     font-size: 30px;
     font-weight: bolder;
     margin-left: 20%;
     margin-bottom: 10%;
-}
-
-.grid-container {
-    grid-template-columns: auto;
-    padding: 20px;
-  }
-
-.grid-container img{
-    width: 60%;
-    display: flex;
-    padding-right: 10%;
-}
-
-.grid-item {
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    font-size: 15px;
-    text-align: right;
-  }
-
-.continue{
-    font-style: italic;
-    color: gray;
-}
-
-.continue:hover{
-    color: blue;
-}
-
-.dot {
-    height: 30px;
-    width: 30px;
-    background-color: white;
-    border-radius: 50%;
-    display: inline-block;
-  }
-
-#info{
-    font-size: 3rem;
-}
-
-.link{
-    font-style: inherit;
-    color: grey;
-}
-
-.link:hover{
-    color: white;
-    font-style: italic;
-}
-
+} */
 
   
