@@ -1,0 +1,32 @@
+<div class="account-container">
+
+    <div class="user-post">
+        {{#each userPosts}}
+        <div>
+            <div class="user-header">
+                <div class="account-body">
+                    <img src="/images/userUploads/{{file_img}}" alt="user-image" class="user-image">
+                    <div class="user-data">
+                        <p>Welcome {{User}}</p>
+                    </div>
+                    <div class="user-icon">
+                        <button type="button" id="Addprofilepic-btn" class="Addprofilepic-btn"></button>
+                    </div>
+                </div>
+
+                <div class="account-body">
+
+
+                    <div class="numberpost">
+                        {{Myposts}}
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<script src="/js/account.js"></script>
