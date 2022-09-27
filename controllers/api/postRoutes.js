@@ -53,8 +53,10 @@ router.post("/:id", withAuth, multerInfo, async (req, res) => {
       }, 
       {
         where: {
-          id: req.params.id
-        }
+            user_id: req.session.user_id
+        },
+        include: [User],
+        order: [['created_at', 'DESC']],
       });
 
 
