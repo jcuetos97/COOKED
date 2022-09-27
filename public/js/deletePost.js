@@ -1,4 +1,4 @@
-const deletePostHandler = async function(event) {
+const deletePostHandler = async function (event) {
     event.preventDefault();
 
     const postId = document.getElementById('post-id');
@@ -15,4 +15,4 @@ const deletePostHandler = async function(event) {
 
 document
     .querySelector("#delete-btn")
-    .addEventListener("click", deletePostHandler);
+    .addEventListener('click', deletePostHandler);
