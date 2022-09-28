@@ -1,5 +1,3 @@
-
-
 const likebtn = document.querySelectorAll('.heart-icon');
 
     likebtn[i].addEventListener('click', async () => {
