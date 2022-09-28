@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, User } = require('../../models');
+const { Post, User, Rating } = require('../../models');
 const withAuth = require('../../utils/auth');
 const multerInfo = require('../../utils/uploadImg');
 
@@ -53,8 +53,6 @@ router.post("/:id", withAuth, multerInfo, async (req, res) => {
         }
       });
 
-     //borra el archivo que esta en la carpeta userUploads, que se llama req.body.file_img;
-
       const posts = await Post.findAll({
         where: {
             user_id: req.session.user_id
@@ -76,7 +74,7 @@ router.post("/:id", withAuth, multerInfo, async (req, res) => {
   
 router.delete("/:id", withAuth, async (req, res) => {
     try {
-      Post.destroy({
+     await Post.destroy({
         where: {
           id: req.params.id
         }
@@ -89,7 +87,42 @@ router.delete("/:id", withAuth, async (req, res) => {
     }
 
 });
-    
+  
+router.post("/like/:id", withAuth, async (req, res) => {
+  try {
+    await Rating.create({ 
+      post_id: req.body.post_id,
+      user_id: req.session.user_id
+    });
+  
+    res.status(200).end();
+     
+  } catch (err) {
+    res.status(400).json(err);
+  }
+
+});
+
+router.delete("/like/:id", withAuth, async (req, res) => {
+  try {
+    await Rating.destroy({ 
+      where: {
+        post_id: req.params.id,
+        user_id: req.session.user_id
+      }
+    });
+
+    res.status(200).end();
+     
+  } catch (err) {
+    res.status(400).json(err);
+  }
+
+});
+
+
+
+
 module.exports = router; 
 
 

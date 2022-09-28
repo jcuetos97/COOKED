@@ -21,19 +21,21 @@
         </div>
         <div class="card-icons">
           <div class="card-icons-wrapper"> 
-            <a><i id="heart-icon" class="fa-regular fa-heart fa-xl" data-count="0"></i></a> 
+            <a><i id="{{id}}" class="fa-regular fa-heart fa-xl heart-icon"></i></a> 
             <p class="count">1</p>
           </div>
           <div class="card-icons-wrapper">
-           <a href="/post/{{id}}"><i id="comment-icon" class="fa-regular fa-comment fa-xl" data-count="0"></i></a>
+           <a href="/post/{{id}}"><i class="fa-regular fa-comment fa-xl" data-count="0"></i></a>
            <p class="count">1</p>
           </div>
         </div>
-      </div>
-    </div>
+      </div>   
+    </div>          
   </div>
+
   {{/each}}
 </div>
 
 <script src="/js/showRecipe.js"></script>
-<script src="/js/likes.js"></script>
+<script type="module" src="/js/likes.js"></script>
+

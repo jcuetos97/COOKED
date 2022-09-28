@@ -6,13 +6,20 @@ class Rating extends Model {}
 Rating.init(
     {
         likes: {
-            type: DataTypes.INTEGER,
-            defaultValue: 0,
+            type: DataTypes.BOOLEAN,
+            defaultValue: true,
         },
         post_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'post',
+                key: 'id',
+            }            
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
                 key: 'id',
             }            
         },
