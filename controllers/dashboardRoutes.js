@@ -21,15 +21,14 @@ router.get('/myposts', withAuth, async (req,res) => {
         });
     } catch (err) {
         console.log(err);
-        res.redirect('login');
     } 
 });
 
 router.get('/trending', withAuth, async (req, res) => {
     try {
         const trendPosts = await Post.findAll({
-            order: [[Rating, 'likes', 'DESC']],
-            include: [User, Rating],
+            // order: [[Rating, 'likes', 'DESC']],
+            include: [User],
         });
         const allPosts = trendPosts.map((post) => post.get({ plain: true }));
         
@@ -40,7 +39,6 @@ router.get('/trending', withAuth, async (req, res) => {
 
     } catch (err) {
         console.log(err);
-        res.redirect('login')
     }
 });
 
@@ -62,7 +60,6 @@ router.get('/category/:category', withAuth, async (req, res) => {
 
     } catch (err) {
         console.log(err);
-        res.redirect('login');
     }
 });
 
@@ -83,8 +80,8 @@ router.get("/edit/:id", withAuth, async (req, res) => {
         });
      } catch (err) {
          console.log(err);
-         res.redirect("login");
      } 
    });
+
 
 module.exports = router;
