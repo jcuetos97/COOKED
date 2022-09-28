@@ -1,46 +1,50 @@
-
 <div class="card">
-    <div class="card-header-pic"
-  style="background-image: url(https://www.animalgourmet.com/wp-content/uploads/2015/08/angrygordon.jpg)"
-    >
-          <div class="card-header-bar">
-            <a href="#" class="btn-message"></a>
-           
-          </div>
-
-          <div class="card-header-position">
-            
-              <a href="#" class="btn-pic"><span ></span></a>
-          </div>
+  <div class="card-header-pic"
+    style="background-image: url(https://www.animalgourmet.com/wp-content/uploads/2015/08/angrygordon.jpg)">
+    <div class="card-header-bar">
+      <a href="#" class="btn-message"></a>
     </div>
-
-    <div class="card-body-card">
-        <h2 class="name">{{userPosts.user.username}}</h2>
-        <h4 class="job-title">Hogwarts teacher</h4>
-        <div class="bio">hola como estav rfkhbadfbwejhfbkjhewbdfhkjeawbfkha</div>
-        <div class="social-accounts">
-          <a href="#" class="fa-brands fa-pinterest"></a>
-          <a href="#" class="fa-brands fa-twitter"></a>
-          <a href="#" class="fa-brands fa-facebook"></a>
-        </div>
+    <!--add avatar image -->
+    <div class="card-header-position">
+      <form action="/avatar" method="post" enctype="multipart/form-data">
+        <input href="#" class="btn-pic" type="file" name="avatar" />
+      </form>
     </div>
+  </div>
+  <!--account info -->
+  <div class="card-body-card">
+    <img src="C:\Users\cjavi\Tarea-COOKED\public\images\others\pngegg.png" alt="Avatar" class="avatar">
+    <h2 class="name">{{posts.user.username}}</h2>
 
-    <div class="card-footer">
-        <div class="stats">
-            <div class="stat">
-              <span class="label">Posts</span>
-              <span class="value">200</span>
-            </div>
-            <div class="stat">
-              <span class="label">Followers</span>
-              <span class="value">940</span>
-            </div>
-            <div class="stat">
-              <span class="label">Likes</span>
-              <span class="value">320</span>
-            </div>
-        </div>
+    <!--account bio and submit button -->
+    <h4 class="job-title">Please write your bio:</h4>
+
+
+    <textarea name="Bio" class="Bio-input" placeholder="Write bio here..." id="txtInput" cols="0" rows="1"></textarea>
+    <button id="bio">Submit</button>
+    <div class="social-accounts">
+      <a href="#" class="fa-brands fa-pinterest"></a>
+      <a href="#" class="fa-brands fa-twitter"></a>
+      <a href="#" class="fa-brands fa-facebook"></a>
     </div>
+  </div>
+
+  <div class="card-footer">
+    <div class="stats">
+      <div class="stat">
+        <span class="label">Posts</span>
+        <span class="value">{{user.post}}</span>
+      </div>
+      <div class="stat">
+        <span class="label">Comments</span>
+        <span class="value">{{comment}}</span>
+      </div>
+      <div class="stat">
+        <span class="label">Likes</span>
+        <span class="value">{{rating.likes}}</span>
+      </div>
+    </div>
+  </div>
 </div>
 
 
@@ -53,27 +57,28 @@
 
 <div class="posts-container">
   {{#each userPosts}}
-    <div class="post-card">
+  <div class="post-card">
     <div>
 
-      
+
       <div class="card-header">
         <div class="card-icons-user">
           <a href="/dashboard/edit/{{id}}" title="Update post"><i class="fa-solid fa-pen-to-square fa-lg icon"></i></a>
           <input type="hidden" id="post-id" value="{{id}}" />
-          <button type="button" id="delete-btn" class="btn-x" title="Delete post"><i class="fa-solid fa-x fa-lg"></i></button>
+          <button type="button" id="delete-btn" class="btn-x" title="Delete post"><i
+              class="fa-solid fa-x fa-lg"></i></button>
         </div>
-        
-        <h2> 
+
+        <h2>
           {{title}}
         </h2>
         <div class="card-data">
           <p>Posted on {{postDate createdAt}}</p>
         </div>
       </div>
-    
+
       <div class="card-body">
-        <img src="/images/userUploads/{{file_img}}" alt="post-image" class="card-image" title="Show recipe"> 
+        <img src="/images/userUploads/{{file_img}}" alt="post-image" class="card-image" title="Show recipe">
 
         <div class="recipe-body" style="display: none;">
           <textarea>{{body}}</textarea>
@@ -81,10 +86,10 @@
         <div class="card-category-user">
           <div class="card-category-text-user">
             {{category}}
-          </div>  
+          </div>
         </div>
-      </div> 
-      
+      </div>
+
     </div>
   </div>
   {{/each}}
@@ -92,4 +97,4 @@
 
 <script src="/js/deletePost.js"></script>
 <script src="/js/showRecipe.js"></script>
- <script src="https://kit.fontawesome.com/e601f25512.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/e601f25512.js" crossorigin="anonymous"></script>

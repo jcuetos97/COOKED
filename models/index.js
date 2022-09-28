@@ -23,7 +23,17 @@ Rating.belongsTo(Post, {
     onDelete: 'CASCADE'
 });
 
-Post.hasOne(Rating, {
+Rating.belongsTo(User, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+});
+
+User.hasMany(Rating, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+});
+
+Rating.hasMany(Post, {
     foreignKey: 'post_id',
     onDelete: 'CASCADE'
 });
