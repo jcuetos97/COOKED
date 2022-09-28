@@ -1,19 +1,7 @@
 
-:root {
-    --light-blue: #05A3C7; 
-    --dark-blue: #086788; 
-    --yellow: #F0C808;
-    --papaya: #FFF1D0;
-    --dark: #333;
-  }
-  
-
-
 @import url(https://fonts.googleapis.com/css?family=Exo+2:300,400,700);
 
-
-
-.card{
+.card {
   position: relative;
   width: 800px; /* Remove for full width */
   height: 800px; /* Remove for full width */
@@ -28,13 +16,14 @@
   margin-bottom: 40px;
   
 }
-.card-header-pic{
+.card-header-pic {
   position: relative;
   height: 300px;
   background-size: cover;
   background-position: top;
 }
-.card-header-pic:after{
+
+.card-header-pic:after {
   content:'';
   position: absolute;
   width: 100%;
@@ -42,7 +31,7 @@
   background: linear-gradient(to top, rgb(7, 48, 73), rgba(181,181,181, 0.1));
 }
 
-.card-header-bar{
+.card-header-bar {
   position: absolute;
   top:0;
   width: 100%;
@@ -51,7 +40,7 @@
 }
 
 
-.btn-message{
+.btn-message {
   display: inline-block;
   background: url(https://res.cloudinary.com/dj14cmwoz/image/upload/v1491077483/profile-card/images/message.svg) no-repeat;
   width: 40px;
@@ -63,7 +52,7 @@
 
 
 
-.card-header-position{
+.card-header-position {
   position: absolute;
   bottom: -3px;
   z-index: 1;
@@ -72,7 +61,7 @@
   left:0;
 }
 
-.btn-pic{
+.btn-pic {
   position: absolute;
   top: -15px;
   left: 35px;
@@ -83,7 +72,7 @@
   box-shadow: 0 10px 15px rgba(110,221,235, .53);
 }
 
-.btn-pic:after{
+.btn-pic:after {
   content: '';
   position:absolute;
   background: url(https://res.cloudinary.com/dj14cmwoz/image/upload/v1491077480/profile-card/images/add.svg) no-repeat;
@@ -94,26 +83,25 @@
   transform: translate(-50%, -50%);
 }
 
-.card-body-card{
+.card-body-card {
   text-align:center;
   margin-top: 20px;
 }
 
-.name{
+.name {
   font-size: 20px;
   font-weight: 700;
   text-transform: uppercase;
-  
 }
 
-.job-title{
+.job-title {
   font-size: 20px;
  font-weight: 300;
   margin-top: 5px;
   color:var(--dark);
 }
 
-.bio{
+.bio {
   font-size: 17px;
   color: var(--dark);
   margin: 10px auto;
@@ -125,7 +113,6 @@
   
 }
 
-
 .card-footer{
   
   position: absolute; 
@@ -133,6 +120,7 @@
   width: 100%;
   bottom: 20px;
 }
+
 .stat{
   box-sizing: border-box;
   width: calc(100% / 3);
@@ -140,6 +128,7 @@
   text-align: center;
   border-left: 1px solid #EBEBEB;
 }
+
 .stat .label{
   display: block;
   text-transform: uppercase;
