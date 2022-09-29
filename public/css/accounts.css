@@ -1,17 +1,4 @@
-
-:root {
-    --light-blue: #05A3C7; 
-    --dark-blue: #086788; 
-    --yellow: #F0C808;
-    --papaya: #FFF1D0;
-    --dark: #333;
-  }
-  
-
-
 @import url(https://fonts.googleapis.com/css?family=Exo+2:300,400,700);
-
-
 
 .card{
   position: relative;
@@ -21,20 +8,21 @@
   box-shadow: 0 0 100px rgba(0,0,0, .3);
   padding:0;
   font-size:14px;
-  font-family: "Exo 2", sans-serif;
-  color: #333;
+  font-family: inherit;
+  color: var(--dark);
   background-color: var(--yellow);
   margin-top: 40px;
   margin-bottom: 40px;
   
 }
-.card-header-pic{
+.card-header-pic {
   position: relative;
   height: 300px;
   background-size: cover;
   background-position: top;
 }
-.card-header-pic:after{
+
+.card-header-pic:after {
   content:'';
   position: absolute;
   width: 100%;
@@ -42,7 +30,7 @@
   background: linear-gradient(to top, rgb(7, 48, 73), rgba(181,181,181, 0.1));
 }
 
-.card-header-bar{
+.card-header-bar {
   position: absolute;
   top:0;
   width: 100%;
@@ -50,20 +38,17 @@
   width: 100%;
 }
 
-
-.btn-message{
+.btn-message {
   display: inline-block;
   background: url(https://res.cloudinary.com/dj14cmwoz/image/upload/v1491077483/profile-card/images/message.svg) no-repeat;
   width: 40px;
   height: 40px;
   margin-right:10px;
   margin-top:10px;
-  float:right;
+  float: right;
 }
 
-
-
-.card-header-position{
+.card-header-position {
   position: absolute;
   bottom: -3px;
   z-index: 1;
@@ -72,7 +57,7 @@
   left:0;
 }
 
-.btn-pic{
+.btn-pic {
   position: absolute;
   top: -15px;
   left: 35px;
@@ -83,7 +68,7 @@
   box-shadow: 0 10px 15px rgba(110,221,235, .53);
 }
 
-.btn-pic:after{
+.btn-pic:after {
   content: '';
   position:absolute;
   background: url(https://res.cloudinary.com/dj14cmwoz/image/upload/v1491077480/profile-card/images/add.svg) no-repeat;
@@ -94,26 +79,25 @@
   transform: translate(-50%, -50%);
 }
 
-.card-body-card{
+.card-body-card {
   text-align:center;
   margin-top: 20px;
 }
 
-.name{
+.name {
   font-size: 20px;
   font-weight: 700;
   text-transform: uppercase;
-  
 }
 
-.job-title{
+.job-title {
   font-size: 20px;
- font-weight: 300;
+  font-weight: 300;
   margin-top: 5px;
   color:var(--dark);
 }
 
-.bio{
+.bio {
   font-size: 17px;
   color: var(--dark);
   margin: 10px auto;
@@ -121,25 +105,28 @@
 }
 
 .social-accounts {
-  height: 1rem;
-  
+  margin: 1rem;
 }
 
 
-.card-footer{
-  
+.card-footer {
   position: absolute; 
   left: 0;
   width: 100%;
   bottom: 20px;
 }
-.stat{
+
+.stat {
   box-sizing: border-box;
   width: calc(100% / 3);
   float: left;
   text-align: center;
-  border-left: 1px solid #EBEBEB;
 }
+
+.stat-border {
+  border-left: 1px solid var(--white)
+}
+
 .stat .label{
   display: block;
   text-transform: uppercase;
@@ -148,7 +135,10 @@
   letter-spacing: 1px;
   color: var(--papaya);
 }
-
+@media only screen and (max-width: 45rem) {
+  .stat .label{
+      font-size:.8rem; } 
+}
 .stat .value{
   display: block;
   font-weight: 700;

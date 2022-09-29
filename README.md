@@ -6,8 +6,12 @@
 
 COOKED is an application that allows users to connect and share their passion and interest for cooking. In this social platform users are able to post questions and recipes, and receive feedback from other users through likes and comments.   
 
-![Demo](./public/images/demo/SS1.png)
-![Demo](./public/images/demo/SS2.png)
+App deployed with heroku. [Link](https://cooked.herokuapp.com/)  
+
+<img src="https://github.com/jcuetos97/COOKED/blob/main/public/images/demo/COOKED%20(1).gif" width="100%">
+<img src="https://github.com/jcuetos97/COOKED/blob/main/public/images/demo/COOKED%20(2).gif" width="100%">
+<img src="https://github.com/jcuetos97/COOKED/blob/main/public/images/demo/COOKED%20(3).gif" width="100%">
+<img src="https://github.com/jcuetos97/COOKED/blob/main/public/images/demo/COOKED%20(4).gif" width="100%">
 
 ## Table of Contents
 * [Description](#description)
@@ -37,3 +41,11 @@ This application was built with:
 * Dotenv
 * Model-View-Controller
 * Multer
+
+## [Questions](#table-of-contents)
+If you have questions or queries about the project, feel free to contact our collaborators:
+* [Diego Sadurni](https://github.com/dsm7071)
+* [Tere Quintero](https://github.com/qgtere)
+* [Javier Contreras](https://github.com/dmxtech)
+* [Arnol Segovia](https://github.com/aspzs)
+* [Juan José Espinosa](https://github.com/jcuetos97)
