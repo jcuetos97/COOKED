@@ -1,0 +1,157 @@
+
+@import url(https://fonts.googleapis.com/css?family=Exo+2:300,400,700);
+
+.card {
+  position: relative;
+  width: 800px; /* Remove for full width */
+  height: 800px; /* Remove for full width */
+  margin:30px auto;
+  box-shadow: 0 0 100px rgba(0,0,0, .3);
+  padding:0;
+  font-size:14px;
+  font-family: "Exo 2", sans-serif;
+  color: #333;
+  background-color: var(--yellow);
+  margin-top: 40px;
+  margin-bottom: 40px;
+  
+}
+.card-header-pic {
+  position: relative;
+  height: 300px;
+  background-size: cover;
+  background-position: top;
+}
+
+.card-header-pic:after {
+  content:'';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgb(7, 48, 73), rgba(181,181,181, 0.1));
+}
+
+.card-header-bar {
+  position: absolute;
+  top:0;
+  width: 100%;
+  z-index: 1;
+  width: 100%;
+}
+
+
+.btn-message {
+  display: inline-block;
+  background: url(https://res.cloudinary.com/dj14cmwoz/image/upload/v1491077483/profile-card/images/message.svg) no-repeat;
+  width: 40px;
+  height: 40px;
+  margin-right:10px;
+  margin-top:10px;
+  float:right;
+}
+
+
+
+.card-header-position {
+  position: absolute;
+  bottom: -3px;
+  z-index: 1;
+  width: 100%;
+  right:0;
+  left:0;
+}
+
+.btn-pic {
+  position: absolute;
+  top: -15px;
+  left: 35px;
+  width: 55px;
+  height: 55px;
+  background: linear-gradient(to left,#086788 ,#05A3C7 );
+  border-radius:100%;
+  box-shadow: 0 10px 15px rgba(110,221,235, .53);
+}
+
+.btn-pic:after {
+  content: '';
+  position:absolute;
+  background: url(https://res.cloudinary.com/dj14cmwoz/image/upload/v1491077480/profile-card/images/add.svg) no-repeat;
+  width:17px;
+  height: 17px;
+  left: 50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+}
+
+.card-body-card {
+  text-align:center;
+  margin-top: 20px;
+}
+
+.name {
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.job-title {
+  font-size: 20px;
+ font-weight: 300;
+  margin-top: 5px;
+  color:var(--dark);
+}
+
+.bio {
+  font-size: 17px;
+  color: var(--dark);
+  margin: 10px auto;
+  line-height: 20px;
+}
+
+.social-accounts {
+  height: 1rem;
+  
+}
+
+.card-footer{
+  
+  position: absolute; 
+  left: 0;
+  width: 100%;
+  bottom: 20px;
+}
+
+.stat{
+  box-sizing: border-box;
+  width: calc(100% / 3);
+  float: left;
+  text-align: center;
+  border-left: 1px solid #EBEBEB;
+}
+
+.stat .label{
+  display: block;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size:18px;
+  letter-spacing: 1px;
+  color: var(--papaya);
+}
+
+.stat .value{
+  display: block;
+  font-weight: 700;
+  font-size:25px;
+  margin-top: 5px;
+}
+
+@media only screen and (max-width: 75rem) {
+    .card {
+        width:100%; }  
+    .card-header-pic{
+        width:100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: space-evenly;
+    } 
+}

@@ -22,12 +22,12 @@ router.get('/myposts', withAuth, async (req,res) => {
         });
     } catch (err) {
         console.log(err);
-        res.redirect('login');
     } 
 });
 
 router.get('/trending', withAuth, async (req, res) => {
     try {
+
         const posts = await Post.findAll({             
             include: [                                
                 {
@@ -66,7 +66,6 @@ router.get('/trending', withAuth, async (req, res) => {
 
     } catch (err) {
         console.log(err);
-        res.redirect('login')
     }
 });
 
@@ -106,7 +105,6 @@ router.get('/category/:category', withAuth, async (req, res) => {
 
     } catch (err) {
         console.log(err);
-        res.redirect('login');
     }
 });
 
@@ -127,8 +125,8 @@ router.get("/edit/:id", withAuth, async (req, res) => {
         });
      } catch (err) {
          console.log(err);
-         res.redirect("login");
      } 
    });
+
 
 module.exports = router;

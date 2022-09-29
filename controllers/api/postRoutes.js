@@ -53,17 +53,15 @@ router.post("/:id", withAuth, multerInfo, async (req, res) => {
       }, 
       {
         where: {
-          id: req.params.id
-        }
+            user_id: req.session.user_id
+        },
+        include: [User],
+        order: [['created_at', 'DESC']],
       });
 
-
-      
       if (req.file != undefined) {
         fs.unlinkSync(path.join(__dirname, `../../public/images/userUploads/${req.body.file_img}`));
       }      
-
-
       const posts = await Post.findAll({
         where: {
             user_id: req.session.user_id
@@ -86,15 +84,13 @@ router.post("/:id", withAuth, multerInfo, async (req, res) => {
 router.delete("/:id", withAuth, async (req, res) => {
     try {
       const fileName = await Post.findByPk(req.params.id, {attributes: ['file_img']});
-      
-      Post.destroy({
+      await Post.destroy({
         where: {
           id: req.params.id
         }
       });
       
       fs.unlinkSync(path.join(__dirname, `../../public/images/userUploads/${fileName.file_img}`));
-  
       res.status(200).end();
        
     } catch (err) {

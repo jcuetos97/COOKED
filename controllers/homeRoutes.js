@@ -5,7 +5,6 @@ const Sequelize = require('sequelize');
 
 router.get('/', withAuth, async (req,res) => {
     try {
-        //const Op = Sequelize.Op;
         const posts = await Post.findAll({             
             include: [                                
                 {
@@ -28,9 +27,8 @@ router.get('/', withAuth, async (req,res) => {
             group: ['Post.id'],           
             order: [['created_at', 'DESC']],
         });
-
-        const allPosts = posts.map((post) => post.get({ plain: true }));
-   
+    
+        const allPosts = posts.map((post) => post.get({ plain: true }));          
         res.render('allPosts', {
         layout: 'dashboard',
         allPosts,        
@@ -56,7 +54,7 @@ router.get('/post/:id', async (req, res) => {
           })
 
         const post = onePost.get({ plain: true });
-        console.log (onePost);
+      
         res.render('singlePost', { 
             layout: 'dashboard',
             post 

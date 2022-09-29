@@ -24,6 +24,7 @@ Rating.belongsTo(Post, {
     onDelete: 'CASCADE'
 });
 
+
 Rating.belongsTo(Post, {
     as: 'RatingHelper',
     foreignKey: 'post_id',
@@ -35,7 +36,8 @@ Rating.belongsTo(User, {
     onDelete: 'CASCADE'
 });
 
-User.hasMany(Rating, {      
+
+User.hasMany(Rating, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE'
 });
@@ -45,6 +47,7 @@ Post.hasMany(Rating, {
     foreignKey: 'post_id',
     onDelete: 'CASCADE'
 });
+
 Post.hasMany(Rating, {
     as: 'RatingHelper',
     foreignKey: 'post_id',

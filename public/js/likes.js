@@ -1,4 +1,5 @@
 const likebtn = document.querySelectorAll('.heart-icon');
+
 for (let i=0; i < likebtn.length; i++) {
     likebtn[i].addEventListener('click', async () => {
         if (likebtn[i].classList.contains('fa-regular')) {
@@ -23,6 +24,7 @@ for (let i=0; i < likebtn.length; i++) {
         }
     })
 }
+
 
 
 
