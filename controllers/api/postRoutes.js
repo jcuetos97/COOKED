@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const fs = require('fs');
 const path = require('path');
-const { Post, User } = require('../../models');
+const { Post, User, Rating } = require('../../models');
 const { getAttributes } = require('../../models/User');
 const withAuth = require('../../utils/auth');
 const multerInfo = require('../../utils/uploadImg');
@@ -99,42 +99,32 @@ router.delete("/:id", withAuth, async (req, res) => {
     }
 
 });
-  
+
 router.post("/like/:id", withAuth, async (req, res) => {
   try {
-    await Rating.create({ 
+    await Rating.create({
       post_id: req.body.post_id,
       user_id: req.session.user_id
     });
-  
     res.status(200).end();
-     
   } catch (err) {
     res.status(400).json(err);
   }
-
 });
-
 router.delete("/like/:id", withAuth, async (req, res) => {
   try {
-    await Rating.destroy({ 
+    await Rating.destroy({
       where: {
         post_id: req.params.id,
         user_id: req.session.user_id
       }
     });
-
     res.status(200).end();
-     
   } catch (err) {
     res.status(400).json(err);
   }
-
 });
-
-
-
-
+    
 module.exports = router; 
 
 

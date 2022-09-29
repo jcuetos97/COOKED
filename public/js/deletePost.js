@@ -1,9 +1,7 @@
 const deletePostHandler = async function(event) {
     event.preventDefault();
-
-    const postId = document.getElementById('post-id');
-
-    const response = await fetch("/api/post/" + postId.value, {
+    
+    const response = await fetch("/api/post/" + event.target.id, {
         method: "DELETE"
     });
     if (response.ok) {
@@ -13,6 +11,7 @@ const deletePostHandler = async function(event) {
     }
 }
 
-document
-    .querySelector("#delete-btn")
-    .addEventListener("click", deletePostHandler);
+const btnDelete = document.querySelectorAll("#delete-btn");
+for (let i= 0; i < btnDelete.length; i++ ) {    
+    btnDelete[i].addEventListener("click", deletePostHandler);
+}

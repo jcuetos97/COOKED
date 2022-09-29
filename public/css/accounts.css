@@ -15,13 +15,14 @@
   margin-bottom: 40px;
   
 }
-.card-header-pic{
+.card-header-pic {
   position: relative;
   height: 300px;
   background-size: cover;
   background-position: top;
 }
-.card-header-pic:after{
+
+.card-header-pic:after {
   content:'';
   position: absolute;
   width: 100%;
@@ -107,13 +108,13 @@
   margin: 1rem;
 }
 
+
 .card-footer {
   position: absolute; 
   left: 0;
   width: 100%;
   bottom: 20px;
 }
-
 
 .stat {
   box-sizing: border-box;
