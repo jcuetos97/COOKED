@@ -108,6 +108,23 @@ router.get('/category/:category', withAuth, async (req, res) => {
     }
 });
 
+router.get('/myaccount', withAuth, async (req,res) => {
+    try {
+        const user = await User.findOne({
+            where: { 
+                id: req.session.user_id 
+            }
+        });
+        const userInfo = user.get({ plain: true });
+        res.render('account', {
+            layout: 'dashboard',
+            userInfo
+        });
+    } catch (err) {
+        console.log(err);
+    } 
+});
+
 router.get("/new", withAuth, (req, res) => {
     res.render("newPost", {
         layout: "dashboard"
@@ -116,7 +133,6 @@ router.get("/new", withAuth, (req, res) => {
 
 router.get("/edit/:id", withAuth, async (req, res) => {
     try {
-
         const postData  =  await Post.findByPk(req.params.id);
         const post = postData.get({ plain: true });
         res.render("editPost", {
