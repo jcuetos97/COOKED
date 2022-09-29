@@ -42,6 +42,7 @@
 .card-image {
     object-fit: contain;
     width: 100%;
+    cursor: pointer;
 }
 
 .card-text {

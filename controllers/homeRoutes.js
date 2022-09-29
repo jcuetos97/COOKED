@@ -1,24 +1,44 @@
 const router = require('express').Router();
-const { Post, Comment, User } = require('../models');
+const { Post, Comment, User, Rating } = require('../models');
 const withAuth = require('../utils/auth');
-
+const Sequelize = require('sequelize');
 
 router.get('/', withAuth, async (req,res) => {
     try {
-        const posts = await Post.findAll({
-           include: [User],
-           order: [['created_at', 'DESC']],
+        //const Op = Sequelize.Op;
+        const posts = await Post.findAll({             
+            include: [                                
+                {
+                    model: User,
+                },
+                {
+                    model: Rating, as: 'RatingMain',
+                    attributes: ['likes'],
+                    required: false,
+                    where: {
+                        'user_id' : req.session.user_id
+                    },
+                },
+                {
+                    model: Rating, as: 'RatingHelper',
+                    attributes: ['post_id', [Sequelize.fn('sum', Sequelize.col('RatingHelper.likes')), 'total']],
+                    required: false,
+                },
+            ],
+            group: ['Post.id'],           
+            order: [['created_at', 'DESC']],
         });
 
         const allPosts = posts.map((post) => post.get({ plain: true }));
    
         res.render('allPosts', {
         layout: 'dashboard',
-        allPosts,
+        allPosts,        
         logged_in: req.session.logged_in,
         });
 
     } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     } 
 });

@@ -1,5 +1,5 @@
-<div class="posts-container">
-  {{#each allPosts}}
+<div class="posts-container">   
+  {{#each allPosts}} 
   <div class="post-card">
     <div>
       <div class="card-header">
@@ -15,18 +15,18 @@
       </div>
      
       <div class="card-body">
-        <img src="/images/userUploads/{{file_img}}" alt="post-image" class="card-image"> 
+        <img src="/images/userUploads/{{file_img}}" alt="post-image" class="card-image" title="Show recipe"> 
         <div class="recipe-body" style="display: none;">
           <textarea>{{body}}</textarea>
         </div>
         <div class="card-icons">
           <div class="card-icons-wrapper"> 
-            <a><i id="heart-icon" class="fa-regular fa-heart fa-xl" data-count="0"></i></a> 
-            <p class="count">1</p>
+            <a><i id="{{id}}" class="{{getlike RatingMain}}" data-count="0"></i></a>             
+            <p class="count">{{getTotal RatingHelper}}</p>
           </div>
           <div class="card-icons-wrapper">
            <a href="/post/{{id}}"><i id="comment-icon" class="fa-regular fa-comment fa-xl" data-count="0"></i></a>
-           <p class="count">1</p>
+           <p class="count"></p>
           </div>
         </div>
       </div>
