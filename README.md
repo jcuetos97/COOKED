@@ -8,10 +8,10 @@ COOKED is an application that allows users to connect and share their passion an
 
 App deployed with heroku. [Link](https://cooked.herokuapp.com/)  
 
-![Demo](./public/images/demo/COOKED%20(1).gif | width=100)
-![Demo](./public/images/demo/COOKED%20(2).gif | width=100)
-![Demo](./public/images/demo/COOKED%20(3).gif | width=100)
-![Demo](./public/images/demo/COOKED%20(4).gif | width=100)
+![Demo](./public/images/demo/COOKED%20(1).gif =250x250)
+![Demo](./public/images/demo/COOKED%20(2).gif =250x250)
+![Demo](./public/images/demo/COOKED%20(3).gif =250x250)
+![Demo](./public/images/demo/COOKED%20(4).gif =250x250)
 
 ## Table of Contents
 * [Description](#description)
